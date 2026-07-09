@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Markdown Converter - Web Page, HTML, and Text to Markdown | PageText</title>
+<meta name="description" content="Free online Markdown converter tools by PageText. Convert web pages to Markdown, HTML to Markdown, Markdown to HTML, and extract text from web pages. All tools are free, no sign-up, client-side processing.">
+<meta name="keywords" content="markdown converter, free markdown converter, online markdown converter, web to markdown, html to markdown, markdown to html, url to markdown, convert markdown online, free online markdown converter, page to markdown, markdown tools">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pagetext.io/markdown-converter">
+<meta property="og:title" content="Free Online Markdown Converter - All-in-One Markdown Tool Suite">
+<meta property="og:description" content="Convert web pages, HTML, and text to/from Markdown with free online tools. No sign-up, no limits, all client-side.">
+<meta property="og:url" content="https://pagetext.io/markdown-converter">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PageText">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESF1YX8CCR"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ESF1YX8CCR');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Free Online Markdown Converter Tools",
+  "description": "A complete suite of free online Markdown converter tools: web page to Markdown, HTML to Markdown, Markdown to HTML, and web page text extractor. All client-side, no sign-up required.",
+  "url": "https://pagetext.io/markdown-converter",
+  "dateModified": "2026-07-09",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "WebApplication", "name": "Web Page to Markdown", "url": "https://pagetext.io" },
+      { "@type": "WebApplication", "name": "HTML to Markdown Converter", "url": "https://pagetext.io/html-to-markdown" },
+      { "@type": "WebApplication", "name": "Markdown to HTML Converter", "url": "https://pagetext.io/markdown-to-html" },
+      { "@type": "WebApplication", "name": "Web Page Text Extractor", "url": "https://pagetext.io/web-page-text-extractor" }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pagetext.io" },
+    { "@type": "ListItem", "position": 2, "name": "Markdown Converter", "item": "https://pagetext.io/markdown-converter" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Markdown converter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Markdown converter is a tool that transforms content between different formats. PageText offers four types: web page to Markdown (converts any URL to clean .md), HTML to Markdown (converts raw HTML code to Markdown), Markdown to HTML (converts Markdown text to HTML code), and web page text extractor (extracts clean text from web pages for LLM processing)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Markdown converter tools are free on PageText?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All four tools are completely free: Web Page to Markdown, HTML to Markdown, Markdown to HTML, and the Web Page Text Extractor. No sign-up required, no usage limits, no API keys. All processing happens client-side in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert a web page to Markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Visit PageText's homepage, paste any public URL into the input field, and click Convert. The tool uses the Jina Reader API to fetch the page and return clean Markdown in under 2 seconds. You can copy the result or download it as a .md file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between web page to Markdown and HTML to Markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Web page to Markdown (pagetext.io) fetches a live URL and returns clean Markdown directly via the Jina Reader API. HTML to Markdown (pagetext.io/html-to-markdown) lets you paste raw HTML code or a URL, then uses Turndown.js to convert it to Markdown. Use the HTML to Markdown tool when you already have the HTML source code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert Markdown back to HTML?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. PageText's Markdown to HTML converter (pagetext.io/markdown-to-html) uses marked.js to convert any Markdown text into clean, semantic HTML code. It supports GitHub Flavored Markdown (GFM) including tables, code blocks, and task lists. You can preview the rendered HTML or copy the raw source code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these Markdown tools safe and private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. All tools run client-side in your browser. When you paste HTML or Markdown text directly, no data is sent to any server. For URL-based conversions, the Jina Reader API fetches the page, but no personal data is collected or stored by PageText."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the best use cases for a free Markdown converter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Markdown converters are essential for: feeding web content into LLMs like ChatGPT and Claude, publishing documentation on GitHub, writing in Obsidian/Notion, converting legacy HTML to Markdown for version control, generating email templates from Markdown, and extracting clean text from web pages for research and analysis."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root { --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d; --text: #e6edf3; --text2: #8b949e; --accent: #58a6ff; --accent2: #1f6feb; --green: #3fb950; --red: #f85149; --radius: 8px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+header .logo { font-size: 1.4em; font-weight: 700; color: var(--accent); text-decoration: none; }
+header .logo span { color: var(--text); }
+header nav a { color: var(--text2); text-decoration: none; margin-left: 20px; font-size: 0.9em; }
+header nav a:hover { color: var(--text); }
+header nav a.active { color: var(--accent); }
+main { flex: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 40px 24px; }
+.hero { text-align: center; margin-bottom: 40px; }
+.hero h1 { font-size: 2.2em; font-weight: 700; margin-bottom: 12px; background: linear-gradient(135deg, var(--accent), #a371f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero p { color: var(--text2); font-size: 1.1em; max-width: 650px; margin: 0 auto; }
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 48px; }
+.tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all .2s; }
+.tool-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(88,166,255,0.1); }
+.tool-card .icon { font-size: 2.2em; margin-bottom: 12px; }
+.tool-card h2 { color: var(--accent); font-size: 1.2em; margin-bottom: 8px; }
+.tool-card p { color: var(--text2); font-size: 0.95em; flex: 1; }
+.tool-card .tag { display: inline-block; background: var(--accent2); color: #fff; font-size: 0.75em; padding: 3px 10px; border-radius: 12px; margin-top: 12px; align-self: flex-start; }
+.quick-tool { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin-bottom: 48px; }
+.quick-tool h2 { color: var(--accent); font-size: 1.3em; margin-bottom: 8px; }
+.quick-tool p { color: var(--text2); font-size: 0.95em; margin-bottom: 16px; }
+.quick-tool .input-group { display: flex; gap: 12px; }
+.quick-tool .input-group input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; color: var(--text); font-size: 1em; outline: none; }
+.quick-tool .input-group input:focus { border-color: var(--accent); }
+.quick-tool .input-group input::placeholder { color: var(--text2); }
+.btn { padding: 12px 24px; border: none; border-radius: var(--radius); font-size: 1em; font-weight: 600; cursor: pointer; transition: all .2s; white-space: nowrap; }
+.btn-primary { background: var(--accent2); color: #fff; }
+.btn-primary:hover { background: var(--accent); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--border); }
+.status { min-height: 24px; margin-bottom: 12px; font-size: 0.9em; color: var(--text2); }
+.status.error { color: var(--red); }
+.status.success { color: var(--green); }
+.status.info { color: var(--accent); }
+.result-area { display: none; margin-top: 16px; }
+.result-area.show { display: block; }
+.result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+.result-header .title { font-size: 1.1em; font-weight: 600; color: var(--accent); }
+.result-actions { display: flex; gap: 8px; }
+.result-content { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; max-height: 500px; overflow-y: auto; font-family: 'SF Mono', 'Fira Code', Menlo, Consolas, monospace; font-size: 0.9em; line-height: 1.6; white-space: pre-wrap; word-break: break-word; color: var(--text); }
+.result-content::-webkit-scrollbar { width: 8px; }
+.result-content::-webkit-scrollbar-track { background: var(--surface); border-radius: 4px; }
+.result-content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+.comparison { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin-bottom: 48px; }
+.comparison h2 { color: var(--accent); font-size: 1.3em; margin-bottom: 16px; }
+.comparison table { width: 100%; border-collapse: collapse; }
+.comparison th, .comparison td { border: 1px solid var(--border); padding: 12px 16px; text-align: left; }
+.comparison th { background: var(--surface2); color: var(--accent); font-weight: 600; }
+.comparison td { color: var(--text2); }
+.comparison td:first-child { color: var(--text); font-weight: 500; }
+.comparison a { color: var(--accent); text-decoration: none; }
+.comparison a:hover { text-decoration: underline; }
+.usage { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin-bottom: 48px; }
+.usage h2 { color: var(--accent); font-size: 1.3em; margin-bottom: 16px; }
+.usage ol { padding-left: 20px; }
+.usage li { color: var(--text2); margin-bottom: 8px; font-size: 0.95em; }
+.usage li strong { color: var(--text); }
+.faq-section { margin-top: 48px; }
+.faq-section h2 { font-size: 1.5em; margin-bottom: 20px; color: var(--text); }
+.faq-section details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; cursor: pointer; margin-bottom: 8px; }
+.faq-section details summary { color: var(--accent); font-weight: 600; }
+.faq-section details p { color: var(--text2); font-size: 0.9em; margin-top: 8px; }
+h2 { font-size: 1.4em; margin: 32px 0 12px; color: var(--accent); }
+p { color: var(--text2); margin-bottom: 12px; }
+code { background: var(--surface2); padding: 2px 8px; border-radius: 4px; font-size: 0.9em; color: var(--green); }
+footer { background: var(--surface); border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--text2); font-size: 0.85em; margin-top: 60px; }
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+@media (max-width: 600px) { .hero h1 { font-size: 1.6em; } .quick-tool .input-group { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Page<span>Text</span></a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/html-to-markdown">HTML → MD</a>
+    <a href="/markdown-to-html">MD → HTML</a>
+    <a href="/markdown-converter" class="active">All Tools</a>
+    <a href="/api">API</a>
+    <a href="https://github.com/sharefun2023/pagetext" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Free Online Markdown Converter — All-in-One Tool Suite</h1>
+    <p>PageText offers four free Markdown converter tools: convert web pages to Markdown, HTML to Markdown, Markdown to HTML, and extract text from web pages. <strong>All tools are free, no sign-up, no limits, and process data client-side.</strong></p>
+  </div>
+
+  <!-- Quick Convert: URL to Markdown -->
+  <div class="quick-tool">
+    <h2>Quick Convert: Web Page to Markdown</h2>
+    <p>Paste any URL and get clean Markdown in under 2 seconds. Powered by Jina Reader API.</p>
+    <div class="input-group">
+      <input type="url" id="quickUrl" placeholder="https://example.com/article" autofocus>
+      <button class="btn btn-primary" onclick="quickConvert()" id="quickBtn">Convert</button>
+    </div>
+    <div class="status" id="quickStatus"></div>
+    <div class="result-area" id="quickResult">
+      <div class="result-header">
+        <div class="title" id="quickTitle">Result</div>
+        <div class="result-actions">
+          <button class="btn btn-secondary" onclick="quickCopy()" id="quickCopyBtn">Copy</button>
+          <button class="btn btn-secondary" onclick="quickDownload()">Download .md</button>
+        </div>
+      </div>
+      <div class="result-content" id="quickContent"></div>
+    </div>
+  </div>
+
+  <!-- Tool Grid -->
+  <h2 style="margin-bottom:16px;">All Markdown Converter Tools</h2>
+  <div class="tool-grid">
+    <a href="/" class="tool-card">
+      <div class="icon">🌐</div>
+      <h2>Web Page to Markdown</h2>
+      <p>Convert any public URL to clean, readable Markdown. Perfect for feeding web content into ChatGPT, Claude, and AI agents.</p>
+      <span class="tag">Most Popular</span>
+    </a>
+    <a href="/html-to-markdown" class="tool-card">
+      <div class="icon">📄→📝</div>
+      <h2>HTML to Markdown</h2>
+      <p>Paste raw HTML code or fetch a URL and convert it to Markdown using Turndown.js. Client-side, no data leaves your browser.</p>
+      <span class="tag">Turndown.js</span>
+    </a>
+    <a href="/markdown-to-html" class="tool-card">
+      <div class="icon">📝→📄</div>
+      <h2>Markdown to HTML</h2>
+      <p>Convert Markdown text to clean, semantic HTML code. Live preview and raw HTML source side by side. Powered by marked.js.</p>
+      <span class="tag">marked.js</span>
+    </a>
+    <a href="/web-page-text-extractor" class="tool-card">
+      <div class="icon">✂️</div>
+      <h2>Web Page Text Extractor</h2>
+      <p>Extract clean text from any web page — strip clutter, ads, and navigation. Get only the article body for LLM processing.</p>
+      <span class="tag">Text Extraction</span>
+    </a>
+  </div>
+
+  <!-- Tool Comparison -->
+  <div class="comparison">
+    <h2>Which Tool Should You Use?</h2>
+    <table>
+      <thead>
+        <tr><th>Your Task</th><th>Best Tool</th><th>How It Works</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Convert a live URL to Markdown</td>
+          <td><a href="/">Web Page to Markdown</a></td>
+          <td>Paste URL → Jina Reader fetches page → returns clean Markdown</td>
+        </tr>
+        <tr>
+          <td>Convert raw HTML code to Markdown</td>
+          <td><a href="/html-to-markdown">HTML to Markdown</a></td>
+          <td>Paste HTML → Turndown.js converts → Markdown output</td>
+        </tr>
+        <tr>
+          <td>Convert Markdown to HTML code</td>
+          <td><a href="/markdown-to-html">Markdown to HTML</a></td>
+          <td>Paste Markdown → marked.js renders → HTML source + preview</td>
+        </tr>
+        <tr>
+          <td>Extract article text from a URL</td>
+          <td><a href="/web-page-text-extractor">Web Page Text Extractor</a></td>
+          <td>Paste URL → Jina Reader fetches → clean text for LLMs</td>
+        </tr>
+        <tr>
+          <td>Use Markdown conversion in automation</td>
+          <td><a href="/api">API</a></td>
+          <td>Call r.jina.ai directly from n8n, Zapier, or custom scripts</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- How to Use -->
+  <div class="usage">
+    <h2>How to Use a Markdown Converter in 3 Simple Steps</h2>
+    <ol>
+      <li><strong>Choose your input format.</strong> Decide whether you have a URL, HTML code, Markdown text, or need to extract text from a web page. Select the appropriate tool from the grid above.</li>
+      <li><strong>Paste or enter your content.</strong> Paste a URL, HTML code, or Markdown text into the input field. Most tools include a "Load Sample" button to try it immediately.</li>
+      <li><strong>Convert and export.</strong> Click the convert button and get your result in seconds. Copy to clipboard, download as .md or .html file, or use the rendered preview.</li>
+    </ol>
+    <p style="margin-top:12px;color:var(--text2);font-size:0.9em;">💡 <strong>Tip:</strong> All tools are client-side. When you paste HTML or Markdown text directly, no data ever leaves your browser. For URL-based conversions, the page content is fetched through the Jina Reader API with no personal data stored.</p>
+  </div>
+
+  <!-- Features -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-bottom:48px;">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+      <h3 style="color:var(--accent);font-size:1.1em;margin-bottom:8px;">🔒 Privacy First</h3>
+      <p style="color:var(--text2);font-size:0.95em;">All conversions happen client-side. Your data never touches our servers unless you explicitly use a URL fetch feature.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+      <h3 style="color:var(--accent);font-size:1.1em;margin-bottom:8px;">⚡ Blazing Fast</h3>
+      <p style="color:var(--text2);font-size:0.95em;">URL to Markdown conversion in under 2 seconds. HTML and Markdown conversions are instant — no server round-trips needed.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+      <h3 style="color:var(--accent);font-size:1.1em;margin-bottom:8px;">🎯 LLM-Optimized</h3>
+      <p style="color:var(--text2);font-size:0.95em;">All outputs are clean, structured Markdown or HTML optimized for feeding into ChatGPT, Claude, DeepSeek, and other AI models.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+      <h3 style="color:var(--accent);font-size:1.1em;margin-bottom:8px;">💰 100% Free</h3>
+      <p style="color:var(--text2);font-size:0.95em;">No sign-up, no API keys, no rate limits, no hidden charges. Use all tools as much as you need, completely free.</p>
+    </div>
+  </div>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>What is a Markdown converter?</summary>
+      <p>A Markdown converter is a tool that transforms content between different formats. PageText offers four types: web page to Markdown (converts any URL to clean .md), HTML to Markdown (converts raw HTML code to Markdown), Markdown to HTML (converts Markdown text to HTML code), and web page text extractor (extracts clean text from web pages for LLM processing).</p>
+    </details>
+    <details>
+      <summary>Which Markdown converter tools are free on PageText?</summary>
+      <p>All four tools are completely free: Web Page to Markdown, HTML to Markdown, Markdown to HTML, and the Web Page Text Extractor. No sign-up required, no usage limits, no API keys. All processing happens client-side in your browser.</p>
+    </details>
+    <details>
+      <summary>How do I convert a web page to Markdown?</summary>
+      <p>Use the Quick Convert box above or visit the homepage. Paste any public URL into the input field and click Convert. The Jina Reader API fetches the page and returns clean Markdown in under 2 seconds. Copy or download as .md file.</p>
+    </details>
+    <details>
+      <summary>What is the difference between web page to Markdown and HTML to Markdown?</summary>
+      <p>Web page to Markdown fetches a live URL and returns Markdown directly via the Jina Reader API. HTML to Markdown lets you paste raw HTML code or a URL, then uses Turndown.js to convert it to Markdown. Use the HTML to Markdown tool when you already have the HTML source code.</p>
+    </details>
+    <details>
+      <summary>Can I convert Markdown back to HTML?</summary>
+      <p>Yes. The Markdown to HTML converter uses marked.js to convert any Markdown text into clean, semantic HTML code. It supports GitHub Flavored Markdown (GFM) including tables, code blocks, and task lists. Preview the rendered HTML or copy the raw source code.</p>
+    </details>
+    <details>
+      <summary>Are these Markdown tools safe and private?</summary>
+      <p>Absolutely. All tools run client-side in your browser. When you paste HTML or Markdown text directly, no data is sent to any server. For URL-based conversions, the Jina Reader API fetches the page, but no personal data is collected or stored by PageText.</p>
+    </details>
+    <details>
+      <summary>What are the best use cases for a free Markdown converter?</summary>
+      <p>Markdown converters are essential for: feeding web content into LLMs like ChatGPT and Claude, publishing documentation on GitHub, writing in Obsidian/Notion, converting legacy HTML to Markdown for version control, generating email templates from Markdown, and extracting clean text from web pages for research and analysis.</p>
+    </details>
+    <details>
+      <summary>What is the PageText API for Markdown conversion?</summary>
+      <p>Behind the scenes, PageText uses the Jina Reader API endpoint <code>https://r.jina.ai/URL</code> with the <code>Accept: text/markdown</code> header. You can call this same endpoint directly from n8n, Zapier, Make.com, or custom scripts for automated Markdown conversion workflows. See the <a href="/api">API page</a> for details.</p>
+    </details>
+    <details>
+      <summary>Do I need to create an account to use these tools?</summary>
+      <p>No. All tools are completely free with no sign-up required. Just open the page and start converting. No registration, no API keys, no email required.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <p>Powered by <a href="https://jina.ai/reader" target="_blank" rel="noopener">Jina Reader</a>, <a href="https://github.com/mixmark-io/turndown" target="_blank" rel="noopener">Turndown.js</a>, and <a href="https://marked.js.org/" target="_blank" rel="noopener">marked.js</a> &middot;
+  <a href="/">pagetext.io</a> &middot;
+  <a href="/html-to-markdown">HTML to Markdown</a> &middot;
+  <a href="/markdown-to-html">Markdown to HTML</a> &middot;
+  <a href="/markdown-converter">Markdown Converter</a> &middot;
+  <a href="/api">API</a> &middot;
+  Free & Open Source</p>
+</footer>
+
+<script>
+let quickMd = '';
+
+async function quickConvert() {
+  const urlInput = document.getElementById('quickUrl');
+  const status = document.getElementById('quickStatus');
+  const btn = document.getElementById('quickBtn');
+  const resultArea = document.getElementById('quickResult');
+  const content = document.getElementById('quickContent');
+  const title = document.getElementById('quickTitle');
+
+  let url = urlInput.value.trim();
+  if (!url) { status.className = 'status error'; status.textContent = 'Please enter a URL'; return; }
+  if (!url.startsWith('http://') && !url.startsWith('https://')) { url = 'https://' + url; }
+
+  status.className = 'status';
+  status.textContent = 'Converting...';
+  btn.disabled = true;
+  resultArea.classList.remove('show');
+
+  try {
+    const resp = await fetch('https://r.jina.ai/' + encodeURIComponent(url), {
+      headers: { 'Accept': 'text/markdown', 'X-Return-Format': 'markdown' }
+    });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    quickMd = await resp.text();
+    content.textContent = quickMd;
+    title.innerHTML = 'Result &mdash; <a href="' + url + '" target="_blank">' + url.replace(/^https?:\/\//, '').substring(0, 60) + '</a>';
+    resultArea.classList.add('show');
+    status.className = 'status success';
+    status.textContent = 'Done!';
+  } catch (e) {
+    status.className = 'status error';
+    status.textContent = 'Error: ' + e.message + ' (check the URL is public and accessible)';
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function quickCopy() {
+  try {
+    await navigator.clipboard.writeText(quickMd);
+    const btn = document.getElementById('quickCopyBtn');
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = orig; }, 2000);
+  } catch (e) {
+    alert('Failed to copy');
+  }
+}
+
+function quickDownload() {
+  const blob = new Blob([quickMd], { type: 'text/markdown' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'page-content.md';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+
+</body>
+</html>
