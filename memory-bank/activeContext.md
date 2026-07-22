@@ -24,3 +24,5 @@
 *   2026-07-18 03:30:44 (auto) — Latest commit: 37d1199 chore: SEO maintenance 2026-07-17 (sharefun2023, 2026-07-17)
 *   2026-07-19 03:30:05 (auto) — Latest commit: 2f9e128 chore: SEO maintenance 2026-07-18 (sharefun2023, 2026-07-18)
 *   2026-07-20 03:30:23 (auto) — Latest commit: 3393a7b chore: SEO maintenance 2026-07-19 (sharefun2023, 2026-07-19)
+*   2026-07-21 03:30:44 (auto) — Latest commit: 9b7a107 docs: add README with use cases and Jina Reader integration (sharefun2023, 2026-07-21)
+*   2026-07-22 03:30:04 (auto) — Latest commit: da92faa chore: SEO maintenance 2026-07-21 (sharefun2023, 2026-07-21)
