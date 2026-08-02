@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web to Text - Free Online Webpage to Plain Text Converter | PageText</title>
+<meta name="description" content="Convert any web page to plain text instantly. Free online web to text converter — strip HTML, CSS, JavaScript, ads, and clutter. Copy or download as .txt. No sign-up required. Powered by Jina Reader.">
+<meta name="keywords" content="web to text, webpage to text, convert web to text, website to text, web page text, url to plain text, webpage text converter, extract text from web, online web to text, free web to text converter">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pagetext.io/web-to-text">
+<meta property="og:title" content="Web to Text - Free Online Webpage to Plain Text Converter">
+<meta property="og:description" content="Convert any web page to plain text instantly. Strip HTML, ads, and clutter. Free, no sign-up.">
+<meta property="og:url" content="https://pagetext.io/web-to-text">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PageText">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESF1YX8CCR"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ESF1YX8CCR');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Web to Text Converter",
+  "description": "Convert any web page URL to clean plain text in one click. Free online web to text converter that strips HTML, CSS, JavaScript, ads, and clutter — leaving only the readable article content.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://pagetext.io/web-to-text",
+  "dateModified": "2026-08-02",
+  "featureList": [
+    "One-click web to text conversion",
+    "Strip HTML tags, ads, navigation, and clutter",
+    "Copy to clipboard or download as .txt",
+    "100% free, no sign-up, client-side processing"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pagetext.io" },
+    { "@type": "ListItem", "position": 2, "name": "Web to Text", "item": "https://pagetext.io/web-to-text" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does web to text mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Web to text means converting the content of any web page (URL) into clean, readable plain text. The tool strips away all HTML markup, CSS styling, JavaScript, navigation menus, ads, sidebars, and other non-content elements — leaving only the article body as plain text that you can copy, download, or feed into AI tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this web to text converter free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely free with no limits. No sign-up, no API keys, no registration required. You can convert as many web pages to text as you need. Processing happens through the Jina Reader API, and the tool itself is 100% client-side."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert a web page to text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply paste any URL into the input field and click 'Convert to Text'. The tool fetches the page content through Jina Reader, strips all formatting and clutter, and returns clean plain text. You can then copy the text to your clipboard or download it as a .txt file — all in seconds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert any website to text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can convert most public web pages to text, including news articles, blog posts, documentation pages, research papers, and product pages. Pages behind login walls, paywalls, or those that rely heavily on JavaScript for rendering may not produce perfect results. The tool works best with standard HTML content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why would I need a web to text converter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Web to text conversion is useful for many scenarios: feeding web content into LLMs like ChatGPT or Claude for analysis, building AI training datasets, saving articles for offline reading, content research and comparison, extracting quotes for writing, creating knowledge base entries, and SEO content audits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is web to text different from HTML to Markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HTML to Markdown preserves formatting like headings, bold, lists, and links in Markdown syntax — useful for developers and technical writers. Web to text strips everything to pure plain text — no formatting at all — which is ideal for word counting, LLM token estimation, text analysis, and scenarios where you need raw content without any markup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the web to text tool preserve formatting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, the web to text tool intentionally strips ALL formatting to deliver pure plain text. Headings become plain text, bold/italic markers are removed, links are stripped (text kept), and code blocks become inline text. The result is maximally clean text suitable for analysis, AI input, and data processing."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root { --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d; --text: #e6edf3; --text2: #8b949e; --accent: #58a6ff; --accent2: #1f6feb; --green: #3fb950; --red: #f85149; --radius: 8px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+header .logo { font-size: 1.4em; font-weight: 700; color: var(--accent); text-decoration: none; }
+header .logo span { color: var(--text); }
+header nav a { color: var(--text2); text-decoration: none; margin-left: 20px; font-size: 0.9em; }
+header nav a:hover { color: var(--text); }
+header nav a.active { color: var(--accent); font-weight: 600; }
+main { flex: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 40px 24px; }
+.hero { text-align: center; margin-bottom: 32px; }
+.hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 12px; background: linear-gradient(135deg, var(--accent), #a371f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero p { color: var(--text2); font-size: 1.05em; max-width: 650px; margin: 0 auto; }
+.tool-area { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.input-group { display: flex; gap: 12px; margin-bottom: 16px; }
+.input-group input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; color: var(--text); font-size: 1em; outline: none; transition: border-color .2s; font-family: inherit; }
+.input-group input:focus { border-color: var(--accent); }
+.input-group input::placeholder { color: var(--text2); }
+.btn { padding: 12px 24px; border: none; border-radius: var(--radius); font-size: 1em; font-weight: 600; cursor: pointer; transition: all .2s; white-space: nowrap; }
+.btn-primary { background: var(--accent2); color: #fff; }
+.btn-primary:hover { background: var(--accent); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--border); }
+.status { min-height: 24px; margin-bottom: 12px; font-size: 0.9em; color: var(--text2); }
+.status.error { color: var(--red); }
+.status.success { color: var(--green); }
+.status.info { color: var(--accent); }
+.result-area { display: none; margin-top: 20px; }
+.result-area.show { display: block; }
+.result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+.result-header .title { font-size: 1.1em; font-weight: 600; color: var(--accent); }
+.result-actions { display: flex; gap: 8px; }
+.result-content { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; max-height: 500px; overflow-y: auto; font-family: 'SF Mono', 'Fira Code', Menlo, Consolas, monospace; font-size: 0.9em; line-height: 1.6; white-space: pre-wrap; word-break: break-word; color: var(--text); }
+.result-content::-webkit-scrollbar { width: 8px; }
+.result-content::-webkit-scrollbar-track { background: var(--surface); border-radius: 4px; }
+.result-content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+.stats { display: flex; gap: 20px; margin-top: 12px; flex-wrap: wrap; }
+.stat { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 16px; text-align: center; }
+.stat .num { font-size: 1.4em; font-weight: 700; color: var(--accent); }
+.stat .label { font-size: 0.8em; color: var(--text2); margin-top: 2px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 48px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.feature h3 { color: var(--accent); font-size: 1.1em; margin-bottom: 8px; }
+.feature p { color: var(--text2); font-size: 0.95em; }
+.use-cases { margin-top: 48px; }
+.use-cases h2 { font-size: 1.5em; margin-bottom: 20px; color: var(--text); }
+.use-cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.use-case-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+.use-case-card strong { color: var(--accent); }
+.use-case-card p { color: var(--text2); font-size: 0.9em; margin-top: 4px; }
+.faq-section { margin-top: 48px; }
+.faq-section h2 { font-size: 1.5em; margin-bottom: 20px; color: var(--text); }
+.faq-section details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; cursor: pointer; margin-bottom: 8px; }
+.faq-section details summary { color: var(--accent); font-weight: 600; }
+.faq-section details p { color: var(--text2); font-size: 0.9em; margin-top: 8px; }
+h2 { font-size: 1.4em; margin: 32px 0 12px; color: var(--accent); }
+p { color: var(--text2); margin-bottom: 12px; }
+code { background: var(--surface2); padding: 2px 8px; border-radius: 4px; font-size: 0.9em; color: var(--green); }
+footer { background: var(--surface); border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--text2); font-size: 0.85em; margin-top: 60px; }
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+@media (max-width: 600px) { .hero h1 { font-size: 1.5em; } .input-group { flex-direction: column; } .tool-area { padding: 16px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Page<span>Text</span></a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/html-to-markdown">HTML → MD</a>
+    <a href="/markdown-to-html">MD → HTML</a>
+    <a href="/markdown-converter">All Tools</a>
+    <a href="/web-to-text" class="active">Web → Text</a>
+    <a href="/api">API</a>
+    <a href="https://github.com/sharefun2023/pagetext" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Web to Text</h1>
+    <p>Convert any web page to <strong>clean, readable plain text</strong> in one click. Strip HTML, CSS, JavaScript, ads, and navigation — get pure article content. Free, no sign-up, unlimited conversions. Powered by <a href="https://jina.ai/reader" target="_blank" style="color:var(--accent);">Jina Reader</a>.</p>
+  </div>
+
+  <div class="tool-area">
+    <div class="input-group">
+      <input type="url" id="urlInput" placeholder="https://example.com/article" autofocus>
+      <button class="btn btn-primary" id="extractBtn" onclick="extractText()">Convert to Text</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <div class="result-area" id="resultArea">
+      <div class="result-header">
+        <div class="title" id="resultTitle">Converted Text</div>
+        <div class="result-actions">
+          <button class="btn btn-secondary" onclick="copyResult()" id="copyBtn">Copy</button>
+          <button class="btn btn-secondary" onclick="downloadResult()">Download .txt</button>
+        </div>
+      </div>
+      <div class="result-content" id="resultContent"></div>
+      <div class="stats" id="statsArea" style="display:none;">
+        <div class="stat"><div class="num" id="charCount">0</div><div class="label">Characters</div></div>
+        <div class="stat"><div class="num" id="wordCount">0</div><div class="label">Words</div></div>
+        <div class="stat"><div class="num" id="lineCount">0</div><div class="label">Lines</div></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Instant Web to Text</h3>
+      <p>Paste any URL and click once — get the main content as clean plain text. No waiting for page loads, no copy-pasting content manually. The Jina Reader API handles everything server-side.</p>
+    </div>
+    <div class="feature">
+      <h3>Clutter-Free Output</h3>
+      <p>Every conversion strips HTML tags, CSS styles, JavaScript, navigation bars, sidebars, footers, ads, and tracking scripts. What's left is the article — pure, readable, and ready to use.</p>
+    </div>
+    <div class="feature">
+      <h3>LLM & AI Ready</h3>
+      <p>Converted text is optimized for AI consumption. Feed web content directly into ChatGPT, Claude, DeepSeek, Gemini — or any LLM for summarization, analysis, and knowledge extraction.</p>
+    </div>
+    <div class="feature">
+      <h3>No Limits, No Sign-Up</h3>
+      <p>Free, unlimited, no registration required. Convert as many web pages as you want. Download as .txt or copy to clipboard. Your data stays private — all processing is client-side.</p>
+    </div>
+  </section>
+
+  <section class="use-cases">
+    <h2>Why Convert Web to Text?</h2>
+    <div class="use-cases-grid">
+      <div class="use-case-card">
+        <strong>AI & LLM Context Building</strong>
+        <p>Convert articles, documentation, and research papers to clean text for use as context in LLM prompts. Save tokens by stripping formatting — only the content matters for AI analysis.</p>
+      </div>
+      <div class="use-case-card">
+        <strong>Content Research & Curation</strong>
+        <p>Pull text from multiple web sources for comparison, competitive analysis, and trend research. Plain text makes side-by-side comparison effortless.</p>
+      </div>
+      <div class="use-case-card">
+        <strong>SEO Content Audits</strong>
+        <p>Extract competitor page content as plain text for word count analysis, keyword density checking, and content structure review. Identify gaps and opportunities faster.</p>
+      </div>
+      <div class="use-case-card">
+        <strong>Offline Reading & Archiving</strong>
+        <p>Save web articles as .txt files for reading later without internet access. Build a lightweight personal archive of reference material, research notes, and saved readings.</p>
+      </div>
+      <div class="use-case-card">
+        <strong>Data Pipeline Integration</strong>
+        <p>Use the Jina Reader API endpoint (r.jina.ai) directly in n8n, Zapier, Make, or custom Python/Node.js scripts for automated web-to-text pipelines.</p>
+      </div>
+      <div class="use-case-card">
+        <strong>Academic & Research Work</strong>
+        <p>Extract text from online papers, articles, and references. Feed into reference managers, citation tools, or analysis pipelines without manual copying.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>What does web to text mean?</summary>
+      <p>Web to text means converting the content of any web page (URL) into clean, readable plain text. The tool strips away all HTML markup, CSS styling, JavaScript, navigation menus, ads, sidebars, and other non-content elements — leaving only the article body as plain text that you can copy, download, or feed into AI tools.</p>
+    </details>
+    <details>
+      <summary>Is this web to text converter free?</summary>
+      <p>Yes, completely free with no limits. No sign-up, no API keys, no registration required. You can convert as many web pages to text as you need. The tool itself is 100% client-side — your URLs are sent to the Jina Reader API for processing, but your data is never stored.</p>
+    </details>
+    <details>
+      <summary>How do I convert a web page to text?</summary>
+      <p>Simply paste any URL into the input field and click 'Convert to Text'. The tool fetches the page content through Jina Reader, strips all formatting and clutter, and returns clean plain text. You can then copy the text to your clipboard or download it as a .txt file — all in seconds.</p>
+    </details>
+    <details>
+      <summary>Can I convert any website to text?</summary>
+      <p>You can convert most public web pages to text, including news articles, blog posts, documentation pages, research papers, and product pages. Pages behind login walls, paywalls, or those that rely heavily on JavaScript for rendering may not produce perfect results.</p>
+    </details>
+    <details>
+      <summary>How is web to text different from HTML to Markdown?</summary>
+      <p>HTML to Markdown preserves formatting like headings, bold, lists, and links in Markdown syntax — useful for developers and technical writers. Web to text strips everything to pure plain text — no formatting at all — ideal for word counting, LLM token estimation, text analysis, and scenarios where raw content is needed.</p>
+    </details>
+    <details>
+      <summary>Does this tool store my data?</summary>
+      <p>No. The web to text conversion happens through the Jina Reader API, and the tool itself runs entirely in your browser. No URLs, extracted text, or any other data is stored on our servers. We don't even have a backend database.</p>
+    </details>
+    <details>
+      <summary>What's the difference between Web to Text and Text Extractor?</summary>
+      <p>Both tools perform URL-to-text conversion using Jina Reader, but they target different use cases: Web to Text is optimized for quick, one-shot conversions with minimal friction — paste a URL, get text. Text Extractor offers additional features for power users who need Markdown stripping, token estimation, and bulk workflows.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <p>Powered by <a href="https://jina.ai/reader" target="_blank" rel="noopener">Jina Reader</a> &middot;
+  <a href="/">pagetext.io</a> &middot;
+  <a href="/html-to-markdown">HTML to Markdown</a> &middot;
+  <a href="/markdown-to-html">Markdown to HTML</a> &middot;
+  <a href="/web-to-text">Web to Text</a> &middot;
+  <a href="/api">API</a> &middot;
+  Free & Open Source</p>
+</footer>
+
+<script>
+let currentText = '';
+let currentUrl = '';
+
+async function extractText() {
+  const urlInput = document.getElementById('urlInput');
+  const status = document.getElementById('status');
+  const btn = document.getElementById('extractBtn');
+  const resultArea = document.getElementById('resultArea');
+  const resultContent = document.getElementById('resultContent');
+  const resultTitle = document.getElementById('resultTitle');
+  const statsArea = document.getElementById('statsArea');
+
+  let url = urlInput.value.trim();
+  if (!url) { status.className = 'status error'; status.textContent = 'Please enter a URL'; return; }
+  if (!url.startsWith('http://') && !url.startsWith('https://')) { url = 'https://' + url; }
+
+  currentUrl = url;
+  status.className = 'status';
+  status.textContent = 'Converting ' + url + ' to text...';
+  btn.disabled = true;
+  resultArea.classList.remove('show');
+  statsArea.style.display = 'none';
+
+  try {
+    const apiUrl = 'https://r.jina.ai/' + encodeURIComponent(url);
+    const response = await fetch(apiUrl, {
+      headers: { 'Accept': 'text/plain', 'X-With-Generated-Alt': 'true' }
+    });
+    if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+    let text = await response.text();
+
+    // Strip Markdown formatting for pure plain text
+    text = text.replace(/^#+\s*/gm, '');
+    text = text.replace(/\*{1,3}/g, '');
+    text = text.replace(/\[([^\]]*)\]\([^)]+\)/g, '$1');
+    text = text.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1');
+    text = text.replace(/```[\s\S]*?```/g, function(m) { return m.replace(/```/g, '').trim(); });
+    text = text.replace(/`([^`]+)`/g, '$1');
+    text = text.replace(/^---+\s*$/gm, '');
+    text = text.replace(/^>\s*/gm, '');
+    text = text.replace(/\n{3,}/g, '\n\n');
+    text = text.trim();
+
+    currentText = text;
+
+    document.getElementById('charCount').textContent = text.length.toLocaleString();
+    const words = text ? text.split(/\s+/).length : 0;
+    document.getElementById('wordCount').textContent = words.toLocaleString();
+    document.getElementById('lineCount').textContent = text.split('\n').length.toLocaleString();
+
+    resultContent.textContent = text;
+    resultTitle.innerHTML = 'Converted Text &mdash; <a href="' + url + '" target="_blank" style="color:var(--accent)">' + url.replace(/^https?:\/\//, '').substring(0, 60) + '</a>';
+    resultArea.classList.add('show');
+    statsArea.style.display = 'flex';
+    status.className = 'status success';
+    status.textContent = 'Done! ' + text.length.toLocaleString() + ' characters converted from ' + url.replace(/^https?:\/\//, '').substring(0, 50);
+  } catch (e) {
+    status.className = 'status error';
+    status.textContent = 'Error: ' + e.message + ' (check the URL is public and accessible)';
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function copyResult() {
+  try {
+    await navigator.clipboard.writeText(currentText);
+    const btn = document.getElementById('copyBtn');
+    const original = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = original; }, 2000);
+  } catch (e) {
+    alert('Failed to copy. Please select all and copy manually.');
+  }
+}
+
+function downloadResult() {
+  if (!currentText) return;
+  const domain = currentUrl.replace(/^https?:\/\//, '').split('/')[0].replace(/\./g, '_');
+  const blob = new Blob([currentText], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = domain + '_text.txt';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+document.getElementById('urlInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') extractText();
+});
+</script>
+
+</body>
+</html>
