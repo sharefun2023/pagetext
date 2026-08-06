@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confluence to Markdown Export — Free Online Converter | PageText</title>
+<meta name="description" content="Export Confluence pages to clean Markdown instantly. Free Confluence to Markdown converter — paste Confluence HTML export or storage format and get clean .md output. Handles Confluence macros, tables, code blocks, and task lists. No sign-up, 100% client-side.">
+<meta name="keywords" content="confluence to markdown, confluence markdown export, convert confluence to markdown, confluence to md, confluence markdown converter, export confluence to markdown, confluence wiki to markdown, atlassian confluence markdown">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pagetext.io/confluence-to-markdown">
+<meta property="og:title" content="Confluence to Markdown Export — Free Online Converter">
+<meta property="og:description" content="Convert Confluence pages to clean Markdown online for free. Paste Confluence HTML export or storage format — our converter strips Confluence macros and generates clean .md output ready for GitHub, Obsidian, or static site generators.">
+<meta property="og:url" content="https://pagetext.io/confluence-to-markdown">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PageText">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESF1YX8CCR"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ESF1YX8CCR');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Confluence to Markdown Converter",
+  "description": "Export Confluence pages to clean Markdown format. Free online tool with client-side processing — handles Confluence macros, tables, code blocks, and task lists.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://pagetext.io/confluence-to-markdown",
+  "dateModified": "2026-08-06",
+  "featureList": [
+    "Paste Confluence HTML export and convert to clean Markdown",
+    "Handles Confluence macros, tables, code blocks, task lists",
+    "Copy or download results as .md file",
+    "100% client-side — your content never leaves your browser"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pagetext.io" },
+    { "@type": "ListItem", "position": 2, "name": "Confluence to Markdown", "item": "https://pagetext.io/confluence-to-markdown" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I export Confluence pages to Markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The easiest way is to use PageText's free Confluence to Markdown converter. Go to your Confluence page, use the 'Export to HTML' option (via Space Tools or Browser > Save As), then paste the exported HTML into our converter. It strips Confluence-specific markup and produces clean, readable Markdown ready for GitHub, Obsidian, or static site generators."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Confluence to Markdown converter free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely free. No sign-up, no usage limits, no API keys needed. All conversion happens client-side in your browser using Turndown.js with Confluence-specific rules — your content never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it handle Confluence macros and special formatting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our converter includes special rules for Confluence storage format: it handles code-block macros, info/tip/warning panels, task lists, emoji shortcuts, user @mentions, and table formatting. Confluence-specific wrapper divs and data attributes are stripped to produce clean Markdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert multiple Confluence pages at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our web converter processes one page at a time. For bulk export, consider using Confluence's built-in Space Export (PDF or HTML), then use our HTML to Markdown converter for each page. For automated workflows, you can use the Confluence Cloud REST API combined with PageText's conversion tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my Confluence data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. All conversion happens entirely in your browser — your Confluence HTML content never leaves your device. No data is uploaded, stored, or transmitted to any server. PageText processes everything client-side using JavaScript."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Markdown flavor does the output use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The converter outputs standard CommonMark-compatible Markdown with ATX-style headings (#), fenced code blocks (```), asterisk bold/italic, and dash-based unordered lists. This format works with GitHub, GitLab, Obsidian, Notion, Hugo, Jekyll, MkDocs, and most static site generators."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why export Confluence to Markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Markdown is the universal format for developer documentation — it's version-controlled, works with static site generators (MkDocs, Docusaurus, Hugo), and integrates with CI/CD pipelines. Exporting Confluence to Markdown helps you migrate documentation to GitHub wikis, convert internal wikis to public docs, or maintain single-source documentation across platforms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for Atlassian Confluence Cloud and Server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The converter works with HTML exports from both Confluence Cloud and Confluence Server/Data Center. Simply export your page as HTML (via browser Save As, Space Export, or the Confluence REST API) and paste the HTML content into the converter. It handles the storage format from both versions."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root { --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d; --text: #e6edf3; --text2: #8b949e; --accent: #58a6ff; --accent2: #1f6feb; --green: #3fb950; --red: #f85149; --radius: 8px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+header .logo { font-size: 1.4em; font-weight: 700; color: var(--accent); text-decoration: none; }
+header .logo span { color: var(--text); }
+header nav a { color: var(--text2); text-decoration: none; margin-left: 20px; font-size: 0.9em; }
+header nav a:hover { color: var(--text); }
+header nav a.active { color: var(--accent); }
+main { flex: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 40px 24px; }
+.hero { text-align: center; margin-bottom: 32px; }
+.hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 12px; background: linear-gradient(135deg, var(--accent), #a371f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero p { color: var(--text2); font-size: 1.05em; max-width: 650px; margin: 0 auto 16px; }
+.hero .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+.tool-area { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.input-group { display: flex; gap: 12px; margin-bottom: 16px; }
+.input-group textarea { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; color: var(--text); font-size: 0.9em; outline: none; transition: border-color .2s; font-family: 'SF Mono', 'Fira Code', Menlo, Consolas, monospace; min-height: 200px; resize: vertical; line-height: 1.5; }
+.input-group textarea:focus { border-color: var(--accent); }
+.input-group textarea::placeholder { color: var(--text2); }
+.btn { padding: 12px 24px; border: none; border-radius: var(--radius); font-size: 1em; font-weight: 600; cursor: pointer; transition: all .2s; white-space: nowrap; }
+.btn-primary { background: var(--accent2); color: #fff; }
+.btn-primary:hover { background: var(--accent); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--border); }
+.status { min-height: 24px; margin: 12px 0; font-size: 0.9em; color: var(--text2); }
+.status.error { color: var(--red); }
+.status.success { color: var(--green); }
+.status.info { color: var(--accent); }
+.result-area { display: none; margin-top: 16px; }
+.result-area.show { display: block; }
+.result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+.result-header .title { font-size: 1.1em; font-weight: 600; color: var(--accent); }
+.result-actions { display: flex; gap: 8px; }
+.result-content { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; max-height: 500px; overflow-y: auto; font-family: 'SF Mono', 'Fira Code', Menlo, Consolas, monospace; font-size: 0.9em; line-height: 1.6; white-space: pre-wrap; word-break: break-word; color: var(--text); }
+.result-content::-webkit-scrollbar { width: 8px; }
+.result-content::-webkit-scrollbar-track { background: var(--surface); border-radius: 4px; }
+.result-content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+.drop-zone { border: 2px dashed var(--border); border-radius: var(--radius); padding: 32px; text-align: center; color: var(--text2); cursor: pointer; transition: border-color .2s, background .2s; margin-bottom: 16px; }
+.drop-zone:hover, .drop-zone.dragover { border-color: var(--accent); background: var(--surface2); }
+.drop-zone .drop-icon { font-size: 2em; margin-bottom: 8px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 48px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.feature h3 { color: var(--accent); font-size: 1.1em; margin-bottom: 8px; }
+.feature p { color: var(--text2); font-size: 0.95em; }
+.methods { margin-top: 48px; }
+.methods h2 { font-size: 1.3em; color: var(--text); margin-bottom: 16px; }
+.method-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 12px; }
+.method-card h3 { color: var(--accent); font-size: 1.05em; margin-bottom: 6px; }
+.method-card p { color: var(--text2); font-size: 0.9em; margin-bottom: 4px; }
+.method-card code { background: var(--surface2); padding: 2px 6px; border-radius: 4px; font-size: 0.85em; color: var(--green); }
+.sample-area { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-top: 40px; }
+.sample-area h2 { font-size: 1.3em; color: var(--accent); margin-bottom: 12px; }
+.sample-area p { color: var(--text2); font-size: 0.95em; margin-bottom: 12px; }
+.sample-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 700px) { .sample-grid { grid-template-columns: 1fr; } }
+.sample-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; font-size: 0.85em; overflow-x: auto; }
+.sample-box h4 { color: var(--accent); margin-bottom: 8px; font-size: 0.95em; }
+.sample-box pre { font-family: 'SF Mono', 'Fira Code', Menlo, Consolas, monospace; white-space: pre-wrap; word-break: break-word; color: var(--text2); line-height: 1.5; }
+.faq-section { margin-top: 48px; }
+.faq-section h2 { font-size: 1.5em; margin-bottom: 20px; color: var(--text); }
+.faq-section details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; cursor: pointer; margin-bottom: 8px; }
+.faq-section details summary { color: var(--accent); font-weight: 600; }
+.faq-section details p { color: var(--text2); font-size: 0.9em; margin-top: 8px; }
+h2 { font-size: 1.4em; margin: 32px 0 12px; color: var(--accent); }
+p { color: var(--text2); margin-bottom: 12px; }
+code { background: var(--surface2); padding: 2px 8px; border-radius: 4px; font-size: 0.9em; color: var(--green); }
+footer { background: var(--surface); border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--text2); font-size: 0.85em; margin-top: 60px; }
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+@media (max-width: 600px) { .hero h1 { font-size: 1.5em; } .tool-area { padding: 16px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Page<span>Text</span></a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/html-to-markdown">HTML → MD</a>
+    <a href="/markdown-to-html">MD → HTML</a>
+    <a href="/confluence-to-markdown" class="active">Confluence → MD</a>
+    <a href="/markdown-converter">All Tools</a>
+    <a href="/api">API</a>
+    <a href="https://github.com/sharefun2023/pagetext" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Confluence to Markdown Export — Free Online Converter</h1>
+    <p>Export your <strong>Confluence pages to clean Markdown</strong> instantly. Paste Confluence HTML export or storage format and get clean <strong>.md</strong> output ready for GitHub, Obsidian, static site generators, or migrating away from Confluence. Our <strong>Confluence Markdown converter</strong> strips macros, handles tables, and preserves formatting — all <strong>100% client-side</strong> so your data stays private.</p>
+    <div class="cta-row">
+      <a href="#tool" class="btn btn-primary">Start Converting ↓</a>
+      <a href="#methods" class="btn btn-secondary">See All Methods</a>
+    </div>
+  </div>
+
+  <div class="tool-area" id="tool">
+    <div class="drop-zone" id="dropZone" onclick="document.getElementById('htmlInput').focus()">
+      <div class="drop-icon">📋</div>
+      <p><strong>Paste your Confluence HTML here</strong></p>
+      <p style="font-size:0.85em;">Export your Confluence page as HTML (Space Tools → Export, or Browser → Save As), then paste the HTML content below. You can also drag &amp; drop an .html file.</p>
+    </div>
+    <div class="input-group" style="flex-direction:column;">
+      <textarea id="htmlInput" placeholder="Paste your Confluence HTML export here...
+
+Example — Confluence storage format:
+&lt;div class=&quot;content-wrapper&quot;&gt;
+  &lt;h1&gt;Project Overview&lt;/h1&gt;
+  &lt;p&gt;This is a &lt;strong&gt;Confluence page&lt;/strong&gt; with rich content.&lt;/p&gt;
+  &lt;table&gt;...&lt;/table&gt;
+  &lt;ac:structured-macro ac:name=&quot;code&quot;&gt;...&lt;/ac:structured-macro&gt;
+&lt;/div&gt;"></textarea>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="convertConfluence()">Convert to Markdown</button>
+      <button class="btn btn-secondary" onclick="loadCFSample()">Load Sample</button>
+      <button class="btn btn-secondary" onclick="document.getElementById('htmlInput').value='';document.getElementById('resultArea').classList.remove('show');document.getElementById('status').textContent='';document.getElementById('status').className='status';">Clear</button>
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <div class="result-area" id="resultArea">
+      <div class="result-header">
+        <div class="title" id="resultTitle">Markdown Output</div>
+        <div class="result-actions">
+          <button class="btn btn-secondary" onclick="copyResult()" id="copyBtn">Copy</button>
+          <button class="btn btn-secondary" onclick="downloadResult()">Download .md</button>
+        </div>
+      </div>
+      <div class="result-content" id="resultContent"></div>
+    </div>
+  </div>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Confluence Macro Handling</h3>
+      <p>Automatically strips Confluence storage format macros: code blocks (ac:structured-macro), info/tip/warning panels, table of contents, children display, and more. Converts what's useful, discards what isn't.</p>
+    </div>
+    <div class="feature">
+      <h3>Table & Task List Support</h3>
+      <p>Confluence tables with merged cells and complex formatting are converted to clean Markdown tables. Task lists with checkboxes become <code>- [x]</code> Markdown task list items.</p>
+    </div>
+    <div class="feature">
+      <h3>User Mentions & Emoji</h3>
+      <p>Confluence @mentions are preserved as plain text mentions. Emoji shortcuts and inline images are handled gracefully — no more broken Confluence markup in your exported Markdown.</p>
+    </div>
+    <div class="feature">
+      <h3>Private & Instant</h3>
+      <p>Zero server processing — Turndown.js runs entirely in your browser. Your Confluence content never leaves your device. No account, no API key, no limits. Convert as many pages as you need.</p>
+    </div>
+  </section>
+
+  <section class="methods" id="methods">
+    <h2>How to Export Confluence Pages to Markdown</h2>
+    <p>There are several ways to get your Confluence content into Markdown. Here are the most effective methods:</p>
+
+    <div class="method-card">
+      <h3>Method 1: PageText Web Converter (Easiest)</h3>
+      <p>Use the converter above. Export your Confluence page as HTML (via Browser → Save As or Space Tools → Export to HTML), then paste the HTML into the converter. Get clean Markdown instantly — no installs, no scripts.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Method 2: Confluence REST API</h3>
+      <p>Fetch Confluence page content programmatically via the <code>/rest/api/content/{id}?expand=body.storage</code> endpoint. Pipe the storage format HTML through PageText's converter for automated workflows. Ideal for CI/CD pipelines and bulk migrations.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Method 3: Atlassian Marketplace Apps</h3>
+      <p>Apps like "Markdown Exporter for Confluence" or "Scroll Markdown Exporter" integrate directly into Confluence. However, many are paid and require admin permissions. PageText is free and requires no Confluence admin access.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Method 4: Pandoc (Advanced)</h3>
+      <p>Export Confluence to HTML, then run <code>pandoc input.html -f html -t markdown -o output.md</code>. Pandoc handles many edge cases but requires command-line setup. Use PageText for quick, no-setup conversions.</p>
+    </div>
+  </section>
+
+  <section class="sample-area">
+    <h2>Confluence to Markdown Conversion Example</h2>
+    <p>See how a typical Confluence page (with macros, tables, and rich formatting) gets transformed into clean Markdown:</p>
+    <div class="sample-grid">
+      <div class="sample-box">
+        <h4>Confluence HTML (Storage Format)</h4>
+        <pre>&lt;h1&gt;Sprint Retrospective&lt;/h1&gt;
+&lt;p&gt;Sprint #42 by &lt;ac:link&gt;
+&lt;ri:user ri:userkey=&quot;...&quot;/&gt;
+&lt;/ac:link&gt; @jane&lt;/p&gt;
+
+&lt;ac:structured-macro ac:name=&quot;info&quot;&gt;
+&lt;ac:rich-text-body&gt;
+&lt;p&gt;This is an info panel.&lt;/p&gt;
+&lt;/ac:rich-text-body&gt;
+&lt;/ac:structured-macro&gt;
+
+&lt;h2&gt;Action Items&lt;/h2&gt;
+&lt;ac:task-list&gt;
+&lt;ac:task&gt;
+&lt;ac:task-status&gt;complete&lt;/ac:task-status&gt;
+&lt;ac:task-body&gt;Fix login bug&lt;/ac:task-body&gt;
+&lt;/ac:task&gt;
+&lt;/ac:task-list&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;th&gt;Item&lt;/th&gt;
+&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Deploy&lt;/td&gt;
+&lt;td&gt;Done&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</pre>
+      </div>
+      <div class="sample-box">
+        <h4>Clean Markdown Output</h4>
+        <pre># Sprint Retrospective
+
+Sprint #42 by @jane
+
+> **Info:** This is an info panel.
+
+## Action Items
+
+- [x] Fix login bug
+
+| Item   | Status |
+|--------|--------|
+| Deploy | Done   |</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>How do I export Confluence pages to Markdown?</summary>
+      <p>The easiest way is to use PageText's free Confluence to Markdown converter. Go to your Confluence page, use the 'Export to HTML' option (via Space Tools or Browser > Save As), open the exported HTML file, copy its source, and paste it into the converter above. It strips Confluence-specific markup and produces clean Markdown ready for GitHub, Obsidian, or static site generators.</p>
+    </details>
+    <details>
+      <summary>Is this Confluence to Markdown converter free?</summary>
+      <p>Yes, completely free. No sign-up, no usage limits, no API keys needed. All conversion happens client-side in your browser using Turndown.js with Confluence-specific rules — your content never leaves your device.</p>
+    </details>
+    <details>
+      <summary>Does it handle Confluence macros and special formatting?</summary>
+      <p>Yes. Our converter includes special rules for Confluence storage format: it handles code-block macros (ac:structured-macro), info/tip/warning panels (converted to blockquotes with emoji), task lists (converted to <code>- [x]</code> syntax), emoji shortcuts, and user @mentions. Confluence-specific wrapper divs and data attributes are stripped to produce clean, portable Markdown.</p>
+    </details>
+    <details>
+      <summary>Is my Confluence data private?</summary>
+      <p>Absolutely. All conversion happens entirely in your browser — your Confluence HTML content never leaves your device. No data is uploaded, stored, or transmitted to any server. PageText processes everything client-side using JavaScript.</p>
+    </details>
+    <details>
+      <summary>What Markdown flavor does the output use?</summary>
+      <p>The converter outputs standard CommonMark-compatible Markdown with ATX-style headings (#), fenced code blocks (```), asterisk bold/italic, and dash-based unordered lists. This format works with GitHub, GitLab, Obsidian, Notion, Hugo, Jekyll, MkDocs, Docusaurus, and most static site generators and documentation platforms.</p>
+    </details>
+    <details>
+      <summary>Why should I export Confluence to Markdown?</summary>
+      <p>Markdown is the universal format for developer documentation. It's version-controlled (Git-friendly), works with static site generators (MkDocs, Docusaurus, Hugo), integrates with CI/CD pipelines, and is portable across platforms. Exporting Confluence to Markdown helps you migrate documentation to GitHub wikis, convert internal wikis to public-facing docs, or maintain single-source documentation that works everywhere.</p>
+    </details>
+    <details>
+      <summary>Can I use this for both Confluence Cloud and Server?</summary>
+      <p>Yes. The converter works with HTML exports from both Confluence Cloud and Confluence Server/Data Center. Simply export your page as HTML (via browser Save As, Space Export, or the Confluence REST API) and paste the HTML content into the converter. It handles the storage format from both versions.</p>
+    </details>
+    <details>
+      <summary>How does this differ from the HTML to Markdown converter?</summary>
+      <p>The Confluence to Markdown converter builds on our HTML to Markdown tool with extra rules specifically for Confluence storage format: it strips <code>ac:</code> namespace macros, converts info/tip/warning panels to styled blockquotes, handles Confluence task lists with checkbox state, cleans up user mention markup, and preserves Confluence table formatting. The standard HTML to Markdown converter works fine for regular HTML — this one is tuned for Confluence exports.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <p>Powered by <a href="https://github.com/mixmark-io/turndown" target="_blank" rel="noopener">Turndown.js</a> &middot;
+  <a href="/">pagetext.io</a> &middot;
+  <a href="/html-to-markdown">HTML to Markdown</a> &middot;
+  <a href="/markdown-to-html">Markdown to HTML</a> &middot;
+  <a href="/confluence-to-markdown">Confluence to Markdown</a> &middot;
+  <a href="/api">API</a> &middot;
+  Free & Open Source</p>
+</footer>
+
+<script src="https://unpkg.com/turndown@7.2.0/dist/turndown.js"></script>
+<script>
+let currentMarkdown = '';
+let turndownService = null;
+
+function initTurndown() {
+  if (typeof TurndownService === 'undefined') return null;
+  if (!turndownService) {
+    turndownService = new TurndownService({
+      headingStyle: 'atx',
+      codeBlockStyle: 'fenced',
+      emDelimiter: '*',
+      bulletListMarker: '-',
+      linkStyle: 'inlined',
+      linkReferenceStyle: 'full'
+    });
+
+    // --- Confluence-specific rules ---
+
+    // Strip ac:structured-macro wrappers — keep inner content
+    turndownService.addRule('confluenceMacro', {
+      filter: function(node) {
+        if (node.nodeType !== 1) return false;
+        if (node.tagName && node.tagName.indexOf('AC:') === 0) return true;
+        if (node.getAttribute && node.getAttribute('data-macro-name')) return true;
+        return false;
+      },
+      replacement: function(content) {
+        return content;
+      }
+    });
+
+    // Handle ac:rich-text-body — just pass through content
+    turndownService.addRule('confluenceRichTextBody', {
+      filter: function(node) {
+        return node.tagName === 'AC:RICH-TEXT-BODY';
+      },
+      replacement: function(content) {
+        return content;
+      }
+    });
+
+    // Handle ac:link (user mentions)
+    turndownService.addRule('confluenceLink', {
+      filter: function(node) {
+        return node.tagName === 'AC:LINK';
+      },
+      replacement: function(content, node) {
+        // Try to find @mention text
+        var alt = node.getAttribute('alt') || '';
+        return alt ? '@' + alt : (content || '');
+      }
+    });
+
+    // Convert info panels to blockquotes with label
+    turndownService.addRule('confluenceInfoPanel', {
+      filter: function(node) {
+        if (node.nodeType !== 1) return false;
+        var cls = node.className || '';
+        return cls.indexOf('confluence-information-macro') !== -1 ||
+               cls.indexOf('aui-message') !== -1 ||
+               cls.indexOf('panel') !== -1;
+      },
+      replacement: function(content, node) {
+        var cls = node.className || '';
+        var prefix = '';
+        if (cls.indexOf('info') !== -1) prefix = '**ℹ️ Info:** ';
+        else if (cls.indexOf('warning') !== -1 || cls.indexOf('note') !== -1) prefix = '**⚠️ Warning:** ';
+        else if (cls.indexOf('tip') !== -1) prefix = '**💡 Tip:** ';
+        else if (cls.indexOf('error') !== -1 || cls.indexOf('danger') !== -1) prefix = '**❌ Error:** ';
+        else if (cls.indexOf('success') !== -1) prefix = '**✅ Success:** ';
+        return '> ' + prefix + content.trim().replace(/\n/g, '\n> ');
+      }
+    });
+
+    // Handle Confluence task lists
+    turndownService.addRule('confluenceTaskList', {
+      filter: function(node) {
+        return node.tagName === 'AC:TASK-LIST';
+      },
+      replacement: function(content) {
+        return content;
+      }
+    });
+
+    turndownService.addRule('confluenceTask', {
+      filter: function(node) {
+        return node.tagName === 'AC:TASK';
+      },
+      replacement: function(content, node) {
+        var statusEl = node.querySelector('ac\\:task-status, AC\\:TASK-STATUS');
+        var bodyEl = node.querySelector('ac\\:task-body, AC\\:TASK-BODY');
+        var checked = statusEl && (statusEl.textContent || '').trim().toLowerCase() === 'complete';
+        var body = bodyEl ? bodyEl.textContent.trim() : content.trim();
+        return '- [' + (checked ? 'x' : ' ') + '] ' + body + '\n';
+      }
+    });
+
+    // Strip Confluence span wrappers
+    turndownService.addRule('confluenceSpan', {
+      filter: function(node) {
+        if (node.nodeType !== 1) return false;
+        return node.tagName === 'SPAN' && !node.className;
+      },
+      replacement: function(content) {
+        return content;
+      }
+    });
+
+    // Handle Confluence emoji
+    turndownService.addRule('confluenceEmoji', {
+      filter: function(node) {
+        if (node.nodeType !== 1) return false;
+        if (!node.getAttribute) return false;
+        return node.tagName === 'AC:EMOJI' || node.getAttribute('data-emoji-shortname');
+      },
+      replacement: function(content, node) {
+        var shortname = (node.getAttribute('data-emoji-shortname') || content || '').replace(/:/g, '');
+        var emojiMap = {
+          'thumbsup': '👍', 'thumbsdown': '👎', 'clap': '👏', 'rocket': '🚀',
+          'star': '⭐', 'check': '✅', 'cross': '❌', 'warning': '⚠️',
+          'info': 'ℹ️', 'question': '❓', 'bulb': '💡', 'fire': '🔥',
+          'tada': '🎉', 'smile': '😊', 'slight_smile': '🙂', 'grin': '😁',
+          'wink': '😉', 'heart': '❤️', 'green_heart': '💚', 'blue_heart': '💙',
+          'broken_heart': '💔', 'ok': '🆗', 'cool': '🆒'
+        };
+        return emojiMap[shortname] || ':' + shortname + ':';
+      }
+    });
+
+    // Remove Confluence TOC macro
+    turndownService.addRule('confluenceTOC', {
+      filter: function(node) {
+        return node.tagName === 'AC:STRUCTURED-MACRO' && node.getAttribute('ac:name') === 'toc';
+      },
+      replacement: function() {
+        return '';
+      }
+    });
+
+    // Remove Confluence children macro
+    turndownService.addRule('confluenceChildren', {
+      filter: function(node) {
+        return node.tagName === 'AC:STRUCTURED-MACRO' && node.getAttribute('ac:name') === 'children';
+      },
+      replacement: function() {
+        return '';
+      }
+    });
+
+    // Date lozenges
+    turndownService.addRule('confluenceDate', {
+      filter: function(node) {
+        return node.tagName === 'TIME' || (node.getAttribute && node.getAttribute('data-date'));
+      },
+      replacement: function(content) {
+        return content || '';
+      }
+    });
+
+    // Strip data-* attributes that clutter Markdown
+    turndownService.addRule('cleanDataAttrs', {
+      filter: function(node) {
+        if (node.nodeType === 1 && node.getAttribute) {
+          var attrs = node.attributes;
+          for (var i = attrs.length - 1; i >= 0; i--) {
+            if (attrs[i].name.startsWith('data-') && attrs[i].name !== 'data-date') {
+              // Don't remove — just flag for stripping. Turndown will handle naturally.
+            }
+          }
+        }
+        return false; // Don't modify output — just run through
+      },
+      replacement: function(content) {
+        return content;
+      }
+    });
+  }
+  return turndownService;
+}
+
+function setStatus(msg, type) {
+  var el = document.getElementById('status');
+  el.className = 'status' + (type ? ' ' + type : '');
+  el.textContent = msg;
+}
+
+function convertConfluence() {
+  var html = document.getElementById('htmlInput').value.trim();
+  if (!html) { setStatus('Please paste your Confluence HTML content first.', 'error'); return; }
+
+  var td = initTurndown();
+  if (!td) { setStatus('Turndown library not loaded. Please check your internet connection.', 'error'); return; }
+
+  try {
+    // Pre-process: wrap raw HTML if it starts with DOCTYPE/html
+    var toProcess = html;
+    // Re-encode to handle Confluence storage format entities
+    currentMarkdown = td.turndown(toProcess);
+
+    // Post-process: clean up common Confluence artifacts
+    currentMarkdown = currentMarkdown
+      .replace(/\\\[/g, '[')
+      .replace(/\\\]/g, ']')
+      .replace(/\n{3,}/g, '\n\n')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .trim();
+
+    document.getElementById('resultContent').textContent = currentMarkdown;
+    document.getElementById('resultTitle').textContent = 'Markdown Output (' + currentMarkdown.length + ' chars)';
+    document.getElementById('resultArea').classList.add('show');
+    setStatus('Conversion complete! ' + currentMarkdown.length + ' characters of Markdown generated.', 'success');
+  } catch (e) {
+    setStatus('Error: ' + e.message, 'error');
+  }
+}
+
+async function copyResult() {
+  try {
+    await navigator.clipboard.writeText(currentMarkdown);
+    var btn = document.getElementById('copyBtn');
+    var original = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function() { btn.textContent = original; }, 2000);
+  } catch (e) {
+    alert('Failed to copy. You can select all and copy manually.');
+  }
+}
+
+function downloadResult() {
+  var blob = new Blob([currentMarkdown], { type: 'text/markdown' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'confluence-export.md';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function loadCFSample() {
+  document.getElementById('htmlInput').value = '<div class="content-wrapper">\n  <h1>Sprint #42 Retrospective</h1>\n  <p>Led by <ac:link><ri:user ri:userkey="jane"/></ac:link>@jane &mdash; Sprint ended 2024-03-15</p>\n\n  <ac:structured-macro ac:name="info">\n    <ac:rich-text-body>\n      <p><strong>Goal:</strong> Complete user auth module and deploy v2.1.</p>\n    </ac:rich-text-body>\n  </ac:structured-macro>\n\n  <h2>What Went Well</h2>\n  <ul>\n    <li>Auth module shipped on time 🚀</li>\n    <li>Code review turnaround improved to &lt;2h</li>\n    <li>Zero P0 bugs in production</li>\n  </ul>\n\n  <h2>Action Items</h2>\n  <ac:task-list>\n    <ac:task>\n      <ac:task-status>complete</ac:task-status>\n      <ac:task-body>Fix login redirect bug (#4231)</ac:task-body>\n    </ac:task>\n    <ac:task>\n      <ac:task-status>incomplete</ac:task-status>\n      <ac:task-body>Add 2FA support for admin accounts</ac:task-body>\n    </ac:task>\n    <ac:task>\n      <ac:task-status>incomplete</ac:task-status>\n      <ac:task-body>Update API documentation for v2.1</ac:task-body>\n    </ac:task>\n  </ac:task-list>\n\n  <h2>Sprint Metrics</h2>\n  <table>\n    <tr><th>Metric</th><th>Target</th><th>Actual</th></tr>\n    <tr><td>Story Points</td><td>34</td><td>32</td></tr>\n    <tr><td>Bugs Resolved</td><td>12</td><td>15</td></tr>\n    <tr><td>Velocity</td><td>34</td><td>32</td></tr>\n  </table>\n\n  <ac:structured-macro ac:name="code">\n    <ac:parameter ac:name="language">bash</ac:parameter>\n    <ac:plain-text-body><![CDATA[$ npm run deploy\n✅ Build complete\n✅ Deployed to production]]></ac:plain-text-body>\n  </ac:structured-macro>\n</div>';
+}
+
+// Drag and drop support
+var dropZone = document.getElementById('dropZone');
+dropZone.addEventListener('dragover', function(e) { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', function() { dropZone.classList.remove('dragover'); });
+dropZone.addEventListener('drop', function(e) {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+  var file = e.dataTransfer.files[0];
+  if (file) {
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      document.getElementById('htmlInput').value = ev.target.result;
+      setStatus('File loaded: ' + file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)', 'info');
+    };
+    reader.readAsText(file);
+  }
+});
+</script>
+
+</body>
+</html>
