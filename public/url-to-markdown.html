@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL to Markdown Converter - Free Webpage to Markdown | pagetext.io</title>
+<meta name="description" content="Convert any URL to clean Markdown free. Paste a link and get LLM-ready Markdown for ChatGPT, Claude, Obsidian, and docs in seconds. No sign-up, no limits, 100% client-side.">
+<meta name="keywords" content="url to markdown, convert url to markdown, url to markdown converter, webpage to markdown, convert webpage to markdown, website to markdown, url to markdown for llm, webpage to markdown for chatgpt, convert url to markdown for claude, web to markdown online, url to md">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pagetext.io/url-to-markdown">
+<meta property="og:title" content="URL to Markdown Converter - Free Webpage to Markdown | pagetext.io">
+<meta property="og:description" content="Convert any URL to clean Markdown in seconds. LLM-ready output for ChatGPT, Claude, Obsidian &amp; docs. Free, no sign-up.">
+<meta property="og:url" content="https://pagetext.io/url-to-markdown">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PageText">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESF1YX8CCR"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ESF1YX8CCR');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "URL to Markdown Converter",
+  "description": "Convert any web page URL to clean, LLM-ready Markdown. Free online tool with client-side processing powered by Jina Reader API.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://pagetext.io/url-to-markdown",
+  "dateModified": "2026-09-06",
+  "featureList": [
+    "Paste any URL and get clean Markdown output",
+    "Preserves headings, links, code blocks, and tables",
+    "Download as .md file or copy to clipboard",
+    "Client-side processing — your data never leaves your browser",
+    "No sign-up, no limits, 100% free"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pagetext.io" },
+    { "@type": "ListItem", "position": 2, "name": "URL to Markdown", "item": "https://pagetext.io/url-to-markdown" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I convert a URL to Markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paste any publicly accessible web page URL into the input above and click 'Convert to Markdown'. The tool fetches the page with the Jina Reader API, renders JavaScript, and returns clean, well-structured Markdown with headings, links, code blocks, and tables preserved. Copy the result or download it as a .md file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert a webpage to Markdown for LLMs like ChatGPT or Claude?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. This is exactly what the tool is built for. Converting web pages to Markdown for LLMs is the most reliable way to feed articles and documentation into ChatGPT, Claude, DeepSeek, Gemini, or any AI agent: Markdown keeps structure (headings, lists, code blocks, tables) without the noise of raw HTML, so models parse the content more accurately and you use fewer tokens. Use the .md download to attach the file directly to a chat, or paste the Markdown into your prompt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the URL to Markdown converter free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, 100% free with no hidden costs. There are no usage limits, no API keys, no registration, and no watermarks. Convert as many URLs to Markdown as you need — unlimited and unrestricted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between URL to Markdown and URL to Text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "URL to Markdown preserves the document structure as Markdown syntax — headings, links, lists, bold, code blocks, and tables — which makes it ideal for LLMs, Obsidian, Notion, and developer documentation. URL to Text strips everything down to plain unformatted text, which is better for word processors, email, and spreadsheets. Use /url-to-markdown when structure matters, /url-to-text when you want pure plain text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private and secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. All conversion happens client-side in your browser. The Markdown is fetched via the Jina Reader API, but your content is never stored on any PageText server. No personal data is collected, and your converted text never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on JavaScript-heavy or modern web pages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The conversion runs through the Jina Reader API, which executes JavaScript before extracting content, so single-page apps (SPAs), React sites, and dynamically loaded articles convert correctly. The page only needs to be publicly accessible — pages behind login walls or paywalls cannot be fetched."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this to build a Markdown knowledge base for RAG or AI agents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Converting web pages to Markdown for RAG pipelines and AI agents is a common workflow: save each page as a .md file, drop it into Obsidian, a vector database, or an agent's knowledge folder. Markdown is the de facto standard format for LLM context because it balances structure with token efficiency. For automated bulk conversion, call the Jina Reader API directly (r.jina.ai) or use the PageText API at pagetext.io/api."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #21262d;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --accent: #58a6ff;
+  --accent2: #1f6feb;
+  --green: #3fb950;
+  --red: #f85149;
+  --radius: 8px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.logo { font-size: 1.2em; font-weight: 700; color: var(--text); text-decoration: none; }
+.logo span { color: var(--accent); }
+nav { display: flex; gap: 16px; flex-wrap: wrap; }
+nav a { color: var(--text2); text-decoration: none; font-size: 0.9em; }
+nav a:hover, nav a.active { color: var(--accent); }
+main { flex: 1; max-width: 900px; margin: 0 auto; padding: 32px 24px; width: 100%; }
+.hero { text-align: center; margin-bottom: 32px; }
+.hero h1 { font-size: 2em; color: var(--text); margin-bottom: 12px; }
+.hero p { color: var(--text2); font-size: 1.05em; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+.tool-area { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.input-group { display: flex; gap: 12px; flex-wrap: wrap; }
+.input-group input {
+  flex: 1; min-width: 200px; padding: 12px 16px;
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  font-size: 1em; outline: none;
+}
+.input-group input:focus { border-color: var(--accent); }
+.btn {
+  padding: 12px 24px; border: none; border-radius: var(--radius);
+  font-size: 1em; font-weight: 600; cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-primary { background: var(--accent2); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: var(--accent); }
+.btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--border); }
+.status { margin-top: 12px; min-height: 20px; font-size: 0.9em; }
+.status.error { color: var(--red); }
+.status.success { color: var(--green); }
+.status.info { color: var(--accent); }
+.result-area { margin-top: 16px; display: none; }
+.result-area.show { display: block; }
+.result-header {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 8px;
+}
+.result-header .title { font-weight: 600; color: var(--text2); font-size: 0.9em; }
+.result-header .title a { color: var(--accent); text-decoration: none; }
+.result-actions { display: flex; gap: 8px; }
+.result-content {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  max-height: 500px; overflow-y: auto;
+  white-space: pre-wrap; word-wrap: break-word;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.9em; line-height: 1.7; color: var(--text);
+}
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 48px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.feature h3 { color: var(--accent); margin-bottom: 8px; font-size: 1em; }
+.feature p { color: var(--text2); font-size: 0.9em; }
+.faq-section { margin-top: 48px; }
+.faq-section h2 { font-size: 1.5em; margin-bottom: 20px; }
+.faq-section details {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; margin-bottom: 8px; cursor: pointer;
+}
+.faq-section summary { color: var(--accent); font-weight: 600; }
+.faq-section details p { color: var(--text2); font-size: 0.9em; margin-top: 8px; }
+footer {
+  background: var(--surface); border-top: 1px solid var(--border);
+  padding: 24px; text-align: center; font-size: 0.85em; color: var(--text2);
+  margin-top: 48px;
+}
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.6em; }
+  .input-group { flex-direction: column; }
+  .tool-area { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Page<span>Text</span></a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/html-to-markdown">HTML → MD</a>
+    <a href="/markdown-to-html">MD → HTML</a>
+    <a href="/url-to-markdown" class="active">URL → MD</a>
+    <a href="/url-to-text">URL → Text</a>
+    <a href="/md-to-pdf">MD → PDF</a>
+    <a href="/markdown-converter">All Tools</a>
+    <a href="/api">API</a>
+    <a href="https://github.com/sharefun2023/pagetext" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Free URL to Markdown Converter</h1>
+    <p>Turn any web page into clean, structured Markdown in seconds. Paste a URL below and get LLM-ready Markdown with headings, links, code blocks, and tables preserved — perfect for ChatGPT, Claude, Obsidian, Notion, developer docs, and RAG pipelines. <strong>100% client-side</strong>: no server ever sees your content.</p>
+  </div>
+
+  <div class="tool-area">
+    <div class="input-group">
+      <input type="url" id="urlInput" placeholder="https://example.com/article" autofocus>
+      <button class="btn btn-primary" id="convertBtn" onclick="convertToMarkdown()">Convert to Markdown</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <div class="result-area" id="resultArea">
+      <div class="result-header">
+        <div class="title" id="resultTitle">Result</div>
+        <div class="result-actions">
+          <button class="btn btn-secondary" onclick="copyResult()" id="copyBtn">Copy</button>
+          <button class="btn btn-secondary" onclick="downloadResult()">Download .md</button>
+        </div>
+      </div>
+      <div class="result-content" id="resultContent"></div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <h3>LLM-Ready Markdown</h3>
+      <p>Clean, structured Markdown that ChatGPT, Claude, and other AI models parse accurately. Headings, lists, code blocks, and tables are preserved — no HTML noise, no wasted tokens.</p>
+    </div>
+    <div class="feature">
+      <h3>Structure Preserved</h3>
+      <p>Unlike plain-text extractors, this tool keeps the document hierarchy: H1–H6 headings, links, bold, blockquotes, code fences, and tables all survive the conversion as real Markdown.</p>
+    </div>
+    <div class="feature">
+      <h3>Privacy First</h3>
+      <p>All conversion runs in your browser via the Jina Reader API. Your content never touches PageText servers — safe for sensitive documents and proprietary pages.</p>
+    </div>
+    <div class="feature">
+      <h3>No Sign-Up, No Limits</h3>
+      <p>Convert unlimited URLs to Markdown at zero cost. No accounts, no API keys, no registration. Just paste a URL and get results instantly.</p>
+    </div>
+  </div>
+
+  <section style="margin-top:48px;">
+    <h2>How URL to Markdown Conversion Works</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;">
+        <div style="font-size:2em;margin-bottom:8px;">1</div>
+        <h3 style="color:var(--accent);font-size:1em;margin-bottom:6px;">Paste a URL</h3>
+        <p style="color:var(--text2);font-size:0.9em;">Enter any publicly accessible web page URL — articles, blog posts, documentation, or news pages.</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;">
+        <div style="font-size:2em;margin-bottom:8px;">2</div>
+        <h3 style="color:var(--accent);font-size:1em;margin-bottom:6px;">Click Convert</h3>
+        <p style="color:var(--text2);font-size:0.9em;">The Jina Reader API fetches the page, renders JavaScript, extracts the content, and returns clean Markdown in under 2 seconds.</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;">
+        <div style="font-size:2em;margin-bottom:8px;">3</div>
+        <h3 style="color:var(--accent);font-size:1em;margin-bottom:6px;">Copy or Download</h3>
+        <p style="color:var(--text2);font-size:0.9em;">Copy the Markdown to your clipboard or download as a .md file — ready for any LLM, editor, or knowledge base.</p>
+      </div>
+    </div>
+    <p style="color:var(--text2);font-size:0.9em;margin-top:16px;text-align:center;">Under the hood: <code style="background:var(--surface2);padding:2px 8px;border-radius:4px;font-size:0.9em;">fetch('https://r.jina.ai/' + url, { headers: { Accept: 'text/markdown' } })</code> — that is the entire backend. No servers, no databases, no cookies.</p>
+  </section>
+
+  <section style="margin-top:48px;">
+    <h2>Why Convert Web Pages to Markdown for LLMs?</h2>
+    <p style="color:var(--text2);font-size:0.95em;margin-top:12px;">When you paste raw HTML or cluttered web text into ChatGPT, Claude, DeepSeek, or Gemini, the model wastes context tokens on markup noise and boilerplate. Converting a webpage to Markdown first gives the LLM a clean, structured document it can parse precisely — and most models are explicitly trained to understand Markdown syntax. That is why "convert webpage to markdown for LLM" has become a standard step in AI workflows:</p>
+    <ul style="color:var(--text2);font-size:0.95em;margin-top:12px;padding-left:20px;display:grid;gap:8px;">
+      <li><strong style="color:var(--text);">Prompt building</strong> — paste a clean .md file into a chat to ask questions about an article or docs.</li>
+      <li><strong style="color:var(--text);">Knowledge bases &amp; RAG</strong> — store pages as Markdown so retrieval systems chunk headings and code blocks correctly.</li>
+      <li><strong style="color:var(--text);">Obsidian / Notion</strong> — import web research as native Markdown notes with structure intact.</li>
+      <li><strong style="color:var(--text);">AI agents</strong> — feed agents clean Markdown context instead of messy HTML dumps.</li>
+    </ul>
+  </section>
+
+  <section style="margin-top:48px;">
+    <h2>URL to Markdown vs. URL to Text</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+        <h3 style="color:var(--accent);margin-bottom:8px;">URL to Markdown (This Tool)</h3>
+        <ul style="color:var(--text2);font-size:0.9em;padding-left:20px;">
+          <li>Preserves structure with Markdown syntax</li>
+          <li>Ideal for LLMs, Obsidian, Notion, dev docs</li>
+          <li>Keeps headings, links, code blocks, tables</li>
+          <li>Download as .md file</li>
+        </ul>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+        <h3 style="color:var(--green);margin-bottom:8px;">URL to Text (<a href="/url-to-text" style="color:var(--green);">/url-to-text</a>)</h3>
+        <ul style="color:var(--text2);font-size:0.9em;padding-left:20px;">
+          <li>Pure plain text — no formatting at all</li>
+          <li>Ideal for Word, email, spreadsheets</li>
+          <li>Removes headings, links, lists, code markers</li>
+          <li>Download as .txt file</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>How do I convert a URL to Markdown?</summary>
+      <p>Paste any publicly accessible web page URL into the input field above and click 'Convert to Markdown'. The tool fetches the page with the Jina Reader API, renders JavaScript, and returns clean, well-structured Markdown with headings, links, code blocks, and tables preserved. Copy the result or download it as a .md file.</p>
+    </details>
+    <details>
+      <summary>Can I convert a webpage to Markdown for LLMs like ChatGPT or Claude?</summary>
+      <p>Yes — that is exactly what this tool is built for. Converting web pages to Markdown for LLMs is the most reliable way to feed articles and documentation into ChatGPT, Claude, DeepSeek, Gemini, or any AI agent: Markdown keeps structure without HTML noise, so models parse content more accurately and you use fewer tokens. Use the .md download to attach the file to a chat, or paste the Markdown straight into your prompt.</p>
+    </details>
+    <details>
+      <summary>Is the URL to Markdown converter free?</summary>
+      <p>Yes, 100% free with no hidden costs. There are no usage limits, no API keys, no registration, and no watermarks. Convert as many URLs to Markdown as you need — unlimited and unrestricted.</p>
+    </details>
+    <details>
+      <summary>Is my data private and secure?</summary>
+      <p>Absolutely. All conversion happens client-side in your browser. The Markdown is fetched via the Jina Reader API, but your content is never stored on any PageText server. No personal data is collected, and your converted text never leaves your device.</p>
+    </details>
+    <details>
+      <summary>Does it work on JavaScript-heavy or modern web pages?</summary>
+      <p>Yes. The conversion runs through the Jina Reader API, which executes JavaScript before extracting content, so single-page apps (SPAs), React sites, and dynamically loaded articles convert correctly. The page only needs to be publicly accessible — pages behind login walls or paywalls cannot be fetched.</p>
+    </details>
+    <details>
+      <summary>Can I use this to build a Markdown knowledge base for RAG or AI agents?</summary>
+      <p>Absolutely. Converting web pages to Markdown for RAG pipelines and AI agents is a common workflow: save each page as a .md file, drop it into Obsidian, a vector database, or an agent's knowledge folder. Markdown is the de facto standard format for LLM context because it balances structure with token efficiency. For automated bulk conversion, call the Jina Reader API directly (r.jina.ai) or use the PageText API at pagetext.io/api.</p>
+    </details>
+    <details>
+      <summary>What is the difference between URL to Markdown and URL to Text?</summary>
+      <p>URL to Markdown preserves the document structure as Markdown syntax — headings, links, lists, bold, code blocks, and tables — which makes it ideal for LLMs, Obsidian, Notion, and developer documentation. URL to Text strips everything down to plain unformatted text, which is better for word processors, email, and spreadsheets. Use the URL to Markdown tool when structure matters; use the URL to Text tool when you want pure plain text.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <p>Powered by <a href="https://jina.ai/reader" target="_blank" rel="noopener">Jina Reader</a> &middot;
+  <a href="/">pagetext.io</a> &middot;
+  <a href="/url-to-markdown">URL to Markdown</a> &middot;
+  <a href="/url-to-text">URL to Text</a> &middot;
+  <a href="/markdown-to-html">MD to HTML</a> &middot;
+  <a href="/html-to-markdown">HTML to MD</a> &middot;
+  <a href="/api">API</a> &middot;
+  Free & Open Source</p>
+</footer>
+
+<script>
+let currentMarkdown = '';
+let currentUrl = '';
+
+function setStatus(msg, type) {
+  var el = document.getElementById('status');
+  el.className = 'status' + (type ? ' ' + type : '');
+  el.textContent = msg;
+}
+
+async function convertToMarkdown() {
+  const urlInput = document.getElementById('urlInput');
+  const btn = document.getElementById('convertBtn');
+  const resultArea = document.getElementById('resultArea');
+  const resultContent = document.getElementById('resultContent');
+  const resultTitle = document.getElementById('resultTitle');
+
+  let url = urlInput.value.trim();
+  if (!url) { setStatus('Please enter a URL', 'error'); return; }
+  if (!url.startsWith('http://') && !url.startsWith('https://')) { url = 'https://' + url; }
+
+  currentUrl = url;
+  setStatus('Fetching and converting to Markdown...', 'info');
+  btn.disabled = true;
+  resultArea.classList.remove('show');
+
+  try {
+    const apiUrl = 'https://r.jina.ai/' + encodeURIComponent(url);
+    const response = await fetch(apiUrl, {
+      headers: { 'Accept': 'text/markdown', 'X-Return-Format': 'markdown' }
+    });
+    if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+    const markdown = await response.text();
+    currentMarkdown = markdown;
+    resultContent.textContent = currentMarkdown;
+    var displayUrl = url.replace(/^https?:\/\//, '').substring(0, 60);
+    resultTitle.innerHTML = 'Result &mdash; <a href="' + url + '" target="_blank">' + displayUrl + '</a>';
+    resultArea.classList.add('show');
+    setStatus('Done! ' + currentMarkdown.length.toLocaleString() + ' characters of Markdown.', 'success');
+  } catch (e) {
+    setStatus('Error: ' + e.message + ' (check the URL is public and accessible)', 'error');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function copyResult() {
+  try {
+    await navigator.clipboard.writeText(currentMarkdown);
+    var btn = document.getElementById('copyBtn');
+    var original = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function() { btn.textContent = original; }, 2000);
+  } catch (e) {
+    setStatus('Failed to copy', 'error');
+  }
+}
+
+function downloadResult() {
+  var domain = currentUrl.replace(/^https?:\/\//, '').split('/')[0].replace(/\./g, '_');
+  var blob = new Blob([currentMarkdown], { type: 'text/markdown' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = domain + '.md';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+document.getElementById('urlInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') convertToMarkdown();
+});
+</script>
+
+</body>
+</html>
