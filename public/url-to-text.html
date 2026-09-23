@@ -97,7 +97,7 @@ gtag('config', 'G-ESF1YX8CCR');
     },
     {
       "@type": "Question",
-      "name": "Can I use this for bulk URL to text extraction?",
+      "name": "Can I use this for bulk or automated extraction?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "For programmatic bulk extraction, you can call the Jina Reader API directly (r.jina.ai) or use the PageText API at pagetext.io/api. The web tool is designed for single-URL conversions, but the underlying API supports automated workflows via n8n, Zapier, or custom scripts."
@@ -345,6 +345,11 @@ footer a:hover { text-decoration: underline; }
     <details>
       <summary>Can I use this for bulk or automated extraction?</summary>
       <p>For programmatic bulk extraction, you can call the Jina Reader API directly (r.jina.ai) or use the PageText API at pagetext.io/api. The web tool is designed for single-URL conversions, but the underlying API supports automated workflows via n8n, Zapier, or custom scripts.</p>
+    </details>
+
+    <details>
+      <summary>How is URL to Text different from URL to Markdown?</summary>
+      <p>URL to Markdown (PageText's main tool) preserves formatting like headings, links, code blocks, and lists in Markdown syntax. URL to Text strips all formatting and produces clean plain text — ideal for pasting into word processors, email, spreadsheets, or any app that doesn't support Markdown. Use Text when you want pure readable content without any markup.</p>
     </details>
   </section>
 </main>

@@ -104,15 +104,15 @@ gtag('config', 'G-ESF1YX8CCR');
     },
     {
       "@type": "Question",
-      "name": "Why export Confluence to Markdown?",
+      "name": "Why should I export Confluence to Markdown?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Markdown is the universal format for developer documentation — it's version-controlled, works with static site generators (MkDocs, Docusaurus, Hugo), and integrates with CI/CD pipelines. Exporting Confluence to Markdown helps you migrate documentation to GitHub wikis, convert internal wikis to public docs, or maintain single-source documentation across platforms."
+        "text": "Markdown is the universal format for developer documentation. It's version-controlled (Git-friendly), works with static site generators (MkDocs, Docusaurus, Hugo), integrates with CI/CD pipelines, and is portable across platforms. Exporting Confluence to Markdown helps you migrate documentation to GitHub wikis, convert internal wikis to public-facing docs, or maintain single-source documentation that works everywhere."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I use this for Atlassian Confluence Cloud and Server?",
+      "name": "Can I use this for both Confluence Cloud and Server?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. The converter works with HTML exports from both Confluence Cloud and Confluence Server/Data Center. Simply export your page as HTML (via browser Save As, Space Export, or the Confluence REST API) and paste the HTML content into the converter. It handles the storage format from both versions."
@@ -383,6 +383,11 @@ Sprint #42 by @jane
     <details>
       <summary>How does this differ from the HTML to Markdown converter?</summary>
       <p>The Confluence to Markdown converter builds on our HTML to Markdown tool with extra rules specifically for Confluence storage format: it strips <code>ac:</code> namespace macros, converts info/tip/warning panels to styled blockquotes, handles Confluence task lists with checkbox state, cleans up user mention markup, and preserves Confluence table formatting. The standard HTML to Markdown converter works fine for regular HTML — this one is tuned for Confluence exports.</p>
+    </details>
+
+    <details>
+      <summary>Can I convert multiple Confluence pages at once?</summary>
+      <p>Our web converter processes one page at a time. For bulk export, consider using Confluence's built-in Space Export (PDF or HTML), then use our HTML to Markdown converter for each page. For automated workflows, you can use the Confluence Cloud REST API combined with PageText's conversion tools.</p>
     </details>
   </section>
 </main>
