@@ -394,6 +394,30 @@ footer a:hover { text-decoration: underline; }
     </div>
   </div>
 
+    <section class="web-to-markdown" style="margin-top:48px;">
+      <h2 style="font-size:1.5em;margin-bottom:20px;color:var(--text);">Web to Markdown: What People Actually Convert</h2>
+      <p style="color:var(--text2);font-size:0.95em;margin-bottom:16px;">Every web to Markdown job looks a little different, but most of them fall into one of these four buckets. Each one takes a single paste and a single click.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <h3 style="color:var(--accent);font-size:1.05em;margin-bottom:6px;">Documentation and API references</h3>
+          <p style="color:var(--text2);font-size:0.9em;">Convert a docs page to Markdown before pasting it into a prompt. Headings, nested lists and code blocks survive the trip, so the model sees structure instead of a wall of text.</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <h3 style="color:var(--accent);font-size:1.05em;margin-bottom:6px;">Long articles into a knowledge base</h3>
+          <p style="color:var(--text2);font-size:0.9em;">Grab an article as .md and drop it into Obsidian, Notion or Logseq. Front matter, links and images come along, so your notes stay linked instead of turning into loose text.</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <h3 style="color:var(--accent);font-size:1.05em;margin-bottom:6px;">Competitor pages for content audits</h3>
+          <p style="color:var(--text2);font-size:0.9em;">Pull a competitor page into plain Markdown, then diff the heading outline against your own. Far quicker than reading the rendered page and copying sections by hand.</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <h3 style="color:var(--accent);font-size:1.05em;margin-bottom:6px;">Automation and RAG ingestion</h3>
+          <p style="color:var(--text2);font-size:0.9em;">The same <code>r.jina.ai</code> endpoint works from n8n, Zapier or a shell script, so you can schedule a web to Markdown step and chunk the output straight into a vector store.</p>
+        </div>
+      </div>
+      <p style="color:var(--text2);font-size:0.9em;margin-top:16px;">Need something narrower? <a href="/url-to-markdown">URL to Markdown</a> covers LLM pipelines and batch conversion, <a href="/html-to-markdown">HTML to Markdown</a> takes HTML you already have, <a href="/web-page-text-extractor">Web Page Text Extractor</a> strips the markup entirely, and <a href="/markdown-to-html">Markdown to HTML</a> goes back the other way.</p>
+    </section>
+
     <section class="use-cases" style="margin-top:48px;">
       <h2 style="font-size:1.5em;margin-bottom:20px;color:var(--text);">Who Uses PageText</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;">
