@@ -102,21 +102,46 @@ async function viaJina(url, format) {
   return body;
 }
 
-// Chrome we drop before converting: real navigation/menus/boilerplate. Done with
-// HTMLRewriter so nested elements are removed correctly (a regex cannot).
-const JUNK_SELECTOR = [
-  'script', 'style', 'noscript', 'svg', 'iframe', 'form', 'select',
-  'nav', 'header', 'footer', 'aside', 'dialog', 'button',
-  '[role="navigation"]', '[role="banner"]', '[role="contentinfo"]', '[role="complementary"]',
-].join(', ');
+// Elements whose whole subtree is boilerplate. Removed with a depth-aware
+// scanner instead of HTMLRewriter: the native rewriter aborts the whole worker
+// (uncatchable bare 502) on legacy markup like Hacker News'.
+const JUNK_TAGS = new Set([
+  'script', 'style', 'noscript', 'svg', 'iframe', 'form', 'select', 'nav',
+  'header', 'footer', 'aside', 'dialog', 'button', 'canvas', 'template', 'object',
+]);
+const VOID_TAGS = new Set([
+  'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta',
+  'param', 'source', 'track', 'wbr',
+]);
 
-async function stripChrome(response) {
-  const rewriter = new HTMLRewriter().on(JUNK_SELECTOR, {
-    element(el) {
-      el.remove();
-    },
-  });
-  return rewriter.transform(response).text();
+function stripChrome(html) {
+  let out = '';
+  let cut = 0;
+  let skipTag = null;
+  let depth = 0;
+  const re = /<\/?([a-zA-Z][\w:-]*)\b[^>]*?(\/?)>/g;
+  let m;
+  while ((m = re.exec(html))) {
+    const tag = m[1].toLowerCase();
+    const closing = m[0][1] === '/';
+    const selfClosing = m[2] === '/' || VOID_TAGS.has(tag);
+    if (skipTag === null) {
+      if (!closing && !selfClosing && JUNK_TAGS.has(tag)) {
+        out += html.slice(cut, m.index);
+        skipTag = tag;
+        depth = 1;
+        cut = m.index;
+      }
+    } else if (!selfClosing && tag === skipTag) {
+      depth += closing ? -1 : 1;
+      if (depth === 0) {
+        cut = m.index + m[0].length;
+        skipTag = null;
+      }
+    }
+  }
+  out += html.slice(cut);
+  return out;
 }
 
 async function direct(url, format, dbg) {
@@ -133,7 +158,7 @@ async function direct(url, format, dbg) {
 
   let cleaned = raw;
   try {
-    cleaned = await stripChrome(new Response(raw));
+    cleaned = stripChrome(raw);
     if (dbg) dbg.cleanedLen = cleaned.length;
   } catch (e) {
     if (dbg) dbg.err = String(e && e.message ? e.message : e);
