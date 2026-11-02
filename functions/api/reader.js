@@ -105,11 +105,9 @@ async function viaJina(url, format) {
 // Chrome we drop before converting: real navigation/menus/boilerplate. Done with
 // HTMLRewriter so nested elements are removed correctly (a regex cannot).
 const JUNK_SELECTOR = [
-  'script', 'style', 'noscript', 'svg', 'iframe', 'form', 'button', 'select',
-  'nav', 'header', 'footer', 'aside', 'dialog',
+  'script', 'style', 'noscript', 'svg', 'iframe', 'form', 'select',
+  'nav', 'header', 'footer', 'aside', 'dialog', 'button',
   '[role="navigation"]', '[role="banner"]', '[role="contentinfo"]', '[role="complementary"]',
-  '[class*="sidebar"]', '[id*="sidebar"]', '[class*="cookie"]', '[class*="breadcrumb"]',
-  '[class*="newsletter"]', '[class*="subscribe"]',
 ].join(', ');
 
 async function stripChrome(response) {
@@ -129,28 +127,24 @@ async function direct(url, format, dbg) {
   if (dbg) dbg.status = res.status;
   if (!res.ok) return null;
   const type = res.headers.get('content-type') || '';
-  if (!type.includes('html')) return await res.text();
-  if (format === 'html') return await res.text();
+  const raw = await res.text();
+  if (!type.includes('html')) return raw;
+  if (format === 'html') return raw;
 
-  let cleaned;
+  let cleaned = raw;
   try {
-    cleaned = await stripChrome(res);
+    cleaned = await stripChrome(new Response(raw));
     if (dbg) dbg.cleanedLen = cleaned.length;
   } catch (e) {
     if (dbg) dbg.err = String(e && e.message ? e.message : e);
-    cleaned = await (await fetch(url, { headers: { 'User-Agent': UA } })).text();
-    if (dbg) dbg.cleanedLen = cleaned.length;
   }
-  const md = htmlToMarkdown(cleaned);
-  return format === 'text' ? toPlainText(md) : md;
-}
 
-export async function onRequestGet(ctx) {
-  try {
-    return await handle(ctx);
-  } catch (e) {
-    return bad(502, 'reader failed: ' + String(e && e.message ? e.message : e));
+  let md = htmlToMarkdown(cleaned);
+  if (md.replace(/\s/g, '').length < 200) {
+    if (dbg) dbg.fallbackRaw = true;
+    md = htmlToMarkdown(raw);
   }
+  return format === 'text' ? toPlainText(md) : md;
 }
 
 async function handle({ request }) {
