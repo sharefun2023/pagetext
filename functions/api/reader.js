@@ -124,11 +124,12 @@ async function stripChrome(response) {
   return rewriter.transform(response).text();
 }
 
-async function direct(url, format) {
+async function direct(url, format, dbg) {
   const res = await fetch(url, {
     headers: { 'User-Agent': UA, Accept: 'text/html,application/xhtml+xml' },
     redirect: 'follow',
   });
+  if (dbg) dbg.status = res.status;
   if (!res.ok) return null;
   const type = res.headers.get('content-type') || '';
   if (!type.includes('html')) return await res.text();
@@ -137,8 +138,11 @@ async function direct(url, format) {
   let cleaned;
   try {
     cleaned = await stripChrome(res);
-  } catch {
+    if (dbg) dbg.cleanedLen = cleaned.length;
+  } catch (e) {
+    if (dbg) dbg.err = String(e && e.message ? e.message : e);
     cleaned = await (await fetch(url, { headers: { 'User-Agent': UA } })).text();
+    if (dbg) dbg.cleanedLen = cleaned.length;
   }
   const md = htmlToMarkdown(cleaned);
   return format === 'text' ? toPlainText(md) : md;
@@ -158,22 +162,31 @@ export async function onRequestGet({ request }) {
   if (target.protocol !== 'http:' && target.protocol !== 'https:') return bad(400, 'unsupported protocol');
 
   const format = (params.get('format') || 'markdown').toLowerCase();
+  const dbg = params.get('debug') ? {} : null;
   let body = null;
   let src = 'jina';
   try {
     body = await viaJina(target.toString(), format);
-  } catch {
+  } catch (e) {
+    if (dbg) dbg.jinaErr = String(e && e.message ? e.message : e);
     body = null;
   }
   if (body === null) {
     src = 'direct';
     try {
-      body = await direct(target.toString(), format);
-    } catch {
+      body = await direct(target.toString(), format, dbg);
+    } catch (e) {
+      if (dbg) dbg.directErr = String(e && e.message ? e.message : e);
       body = null;
     }
   }
   if (body === null) return bad(502, 'could not read ' + target.toString());
+
+  if (dbg) {
+    return new Response(JSON.stringify({ src, len: body.length, ...dbg, head: body.slice(0, 200) }, null, 1), {
+      headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...CORS },
+    });
+  }
 
   return new Response(body, {
     headers: {
