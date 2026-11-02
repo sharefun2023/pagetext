@@ -148,7 +148,15 @@ async function direct(url, format, dbg) {
   return format === 'text' ? toPlainText(md) : md;
 }
 
-export async function onRequestGet({ request }) {
+export async function onRequestGet(ctx) {
+  try {
+    return await handle(ctx);
+  } catch (e) {
+    return bad(502, 'reader failed: ' + String(e && e.message ? e.message : e));
+  }
+}
+
+async function handle({ request }) {
   const params = new URL(request.url).searchParams;
   const raw = params.get('url');
   if (!raw) return bad(400, 'missing url parameter');
