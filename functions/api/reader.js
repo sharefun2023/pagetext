@@ -2,9 +2,12 @@
 //
 // Same-origin proxy for Jina Reader. Browsers cannot call r.jina.ai directly
 // any more: anonymous cross-origin requests come back HTTP 401, which silently
-// broke every URL-based tool on pagetext.io. Fetching from the edge worker has
-// no Origin restriction, so this proxy keeps the tools working and lets us
-// fall back to a direct fetch if Jina is rate limited or down.
+// broke every URL-based tool on pagetext.io. Fetching from the edge has no
+// Origin restriction, so this proxy keeps the tools working.
+//
+// If Jina is unreachable/rate limited we fall back to fetching the page
+// ourselves and converting the HTML locally (headings, lists, links, paragraphs
+// preserved). `x-reader-src` tells which path produced the body.
 
 const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
@@ -22,34 +25,70 @@ function bad(status, message) {
   });
 }
 
+const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', mdash: '—', ndash: '–', hellip: '…', rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”', copy: '©', reg: '®', trade: '™' };
+
 function decodeEntities(s) {
-  const map = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', '#39': "'" };
-  return s.replace(/&(#\d+|#x[0-9a-f]+|[a-z]+\d*);/gi, (m, e) => {
+  return s.replace(/&(#\d+|#x[0-9a-f]+|[a-z][a-z0-9]*);/gi, (m, e) => {
     if (e[0] === '#') {
       const code = e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10);
       return Number.isFinite(code) && code > 0 && code < 0x110000 ? String.fromCodePoint(code) : m;
     }
-    return map[e.toLowerCase()] ?? m;
+    return ENTITIES[e.toLowerCase()] ?? m;
   });
 }
 
-// Crude but dependency-free HTML -> text fallback.
-function htmlToText(html) {
-  let s = html
-    .replace(/<!--[\s\S]*?-->/g, ' ')
-    .replace(/<(script|style|noscript|svg|iframe)[\s\S]*?<\/\1>/gi, ' ')
-    .replace(/<\/(p|div|section|article|header|footer|li|tr|h[1-6]|blockquote|pre)>/gi, '\n')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<li[^>]*>/gi, '- ')
-    .replace(/<[^>]+>/g, '');
-  s = decodeEntities(s);
-  return s
+function clean(md) {
+  return md
+    .replace(/[ \t\u00a0]+/g, ' ')
     .split('\n')
-    .map((l) => l.replace(/[ \t\u00a0]+/g, ' ').trim())
-    .filter((l, i, arr) => l !== '' || (i > 0 && arr[i - 1] !== ''))
+    .map((l) => l.replace(/^[ \t]+|[ \t]+$/g, ''))
     .join('\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
+}
+
+// Lightweight HTML -> Markdown. Good enough for article-style pages; Jina
+// handles the hard cases whenever it is available.
+function htmlToMarkdown(html) {
+  let s = html
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<(script|style|noscript|svg|iframe|nav|footer|aside|form)\b[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<head\b[\s\S]*?<\/head>/gi, ' ');
+
+  s = s.replace(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi, (m, href, text) => {
+    const t = text.replace(/<[^>]+>/g, '').trim();
+    if (!t || href.startsWith('#')) return t;
+    if (href.startsWith('/')) return '[' + t + '](https://' + (html.match(/https?:\/\/([^\/"'\s]+)/) || [, ''])[1] + href + ')';
+    return /^https?:/i.test(href) ? `[${t}](${href})` : t;
+  });
+
+  s = s
+    .replace(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi, (m, n, t) => '\n\n' + '#'.repeat(+n) + ' ' + t.replace(/<[^>]+>/g, '').trim() + '\n\n')
+    .replace(/<li\b[^>]*>([\s\S]*?)<\/li>/gi, (m, t) => '\n- ' + t.replace(/<[^>]+>/g, '').trim())
+    .replace(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/gi, (m, t) => '\n\n> ' + t.replace(/<[^>]+>/g, '').trim() + '\n\n')
+    .replace(/<pre\b[^>]*>([\s\S]*?)<\/pre>/gi, (m, t) => '\n\n```\n' + t.replace(/<[^>]+>/g, '') + '\n```\n\n')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(p|div|section|article|main|tr|table|ul|ol|header)>/gi, '\n\n')
+    .replace(/<(td|th)\b[^>]*>/gi, ' | ');
+
+  s = decodeEntities(s.replace(/<[^>]+>/g, ' '));
+  return clean(s);
+}
+
+function toPlainText(md) {
+  return clean(
+    md
+      .replace(/^#{1,6}\s*/gm, '')
+      .replace(/```[\s\S]*?```/g, (m) => m.replace(/```/g, '').trim())
+      .replace(/`([^`]+)`/g, '$1')
+      .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/\*{1,3}([^*]+)\*{1,3}/g, '$1')
+      .replace(/^>\s?/gm, '')
+      .replace(/^[-*+]\s+/gm, '')
+      .replace(/^\d+\.\s+/gm, '')
+      .replace(/^---+$/gm, ''),
+  );
 }
 
 async function viaJina(url, format) {
@@ -71,8 +110,10 @@ async function direct(url, format) {
   if (!res.ok) return null;
   const type = res.headers.get('content-type') || '';
   const raw = await res.text();
-  if (format === 'html' || !type.includes('html')) return raw;
-  return htmlToText(raw);
+  if (!type.includes('html')) return raw;
+  if (format === 'html') return raw;
+  const md = htmlToMarkdown(raw);
+  return format === 'text' ? toPlainText(md) : md;
 }
 
 export async function onRequestGet({ request }) {
@@ -90,12 +131,14 @@ export async function onRequestGet({ request }) {
 
   const format = (params.get('format') || 'markdown').toLowerCase();
   let body = null;
+  let src = 'jina';
   try {
     body = await viaJina(target.toString(), format);
   } catch {
     body = null;
   }
   if (body === null) {
+    src = 'direct';
     try {
       body = await direct(target.toString(), format);
     } catch {
@@ -108,6 +151,7 @@ export async function onRequestGet({ request }) {
     headers: {
       'content-type': format === 'html' ? 'text/html; charset=utf-8' : 'text/plain; charset=utf-8',
       'cache-control': 'public, max-age=300',
+      'x-reader-src': src,
       ...CORS,
     },
   });
