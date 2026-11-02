@@ -108,11 +108,8 @@ const JUNK_SELECTOR = [
   'script', 'style', 'noscript', 'svg', 'iframe', 'form', 'button', 'select',
   'nav', 'header', 'footer', 'aside', 'dialog',
   '[role="navigation"]', '[role="banner"]', '[role="contentinfo"]', '[role="complementary"]',
-  '[class*="sidebar" i]', '[id*="sidebar" i]', '[class*="menu" i]', '[id*="menu" i]',
-  '[class*="cookie" i]', '[class*="banner" i]',
-  '[class*="breadcrumb" i]', '[class*="comment" i]', '[class*="share" i]',
-  '[class*="social" i]', '[class*="advert" i]', '[class*="promo" i]',
-  '[class*="newsletter" i]', '[class*="subscribe" i]', '[aria-hidden="true"]',
+  '[class*="sidebar"]', '[id*="sidebar"]', '[class*="cookie"]', '[class*="breadcrumb"]',
+  '[class*="newsletter"]', '[class*="subscribe"]',
 ].join(', ');
 
 async function stripChrome(response) {
