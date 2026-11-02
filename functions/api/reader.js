@@ -167,6 +167,7 @@ export async function onRequestGet({ request }) {
   let src = 'jina';
   try {
     body = await viaJina(target.toString(), format);
+    if (body !== null && !body.trim()) body = null;
   } catch (e) {
     if (dbg) dbg.jinaErr = String(e && e.message ? e.message : e);
     body = null;
@@ -175,12 +176,13 @@ export async function onRequestGet({ request }) {
     src = 'direct';
     try {
       body = await direct(target.toString(), format, dbg);
+      if (body !== null && !body.trim()) body = null;
     } catch (e) {
       if (dbg) dbg.directErr = String(e && e.message ? e.message : e);
       body = null;
     }
   }
-  if (body === null) return bad(502, 'could not read ' + target.toString());
+  if (body === null || !body.trim()) return bad(502, 'could not read ' + target.toString());
 
   if (dbg) {
     return new Response(JSON.stringify({ src, len: body.length, ...dbg, head: body.slice(0, 200) }, null, 1), {
