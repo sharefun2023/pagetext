@@ -102,6 +102,28 @@ async function viaJina(url, format) {
   return body;
 }
 
+// Chrome we drop before converting: real navigation/menus/boilerplate. Done with
+// HTMLRewriter so nested elements are removed correctly (a regex cannot).
+const JUNK_SELECTOR = [
+  'script', 'style', 'noscript', 'svg', 'iframe', 'form', 'button', 'select',
+  'nav', 'header', 'footer', 'aside', 'dialog',
+  '[role="navigation"]', '[role="banner"]', '[role="contentinfo"]', '[role="complementary"]',
+  '[class*="sidebar" i]', '[id*="sidebar" i]', '[class*="menu" i]', '[id*="menu" i]',
+  '[class*="cookie" i]', '[class*="banner" i]',
+  '[class*="breadcrumb" i]', '[class*="comment" i]', '[class*="share" i]',
+  '[class*="social" i]', '[class*="advert" i]', '[class*="promo" i]',
+  '[class*="newsletter" i]', '[class*="subscribe" i]', '[aria-hidden="true"]',
+].join(', ');
+
+async function stripChrome(response) {
+  const rewriter = new HTMLRewriter().on(JUNK_SELECTOR, {
+    element(el) {
+      el.remove();
+    },
+  });
+  return rewriter.transform(response).text();
+}
+
 async function direct(url, format) {
   const res = await fetch(url, {
     headers: { 'User-Agent': UA, Accept: 'text/html,application/xhtml+xml' },
@@ -109,10 +131,16 @@ async function direct(url, format) {
   });
   if (!res.ok) return null;
   const type = res.headers.get('content-type') || '';
-  const raw = await res.text();
-  if (!type.includes('html')) return raw;
-  if (format === 'html') return raw;
-  const md = htmlToMarkdown(raw);
+  if (!type.includes('html')) return await res.text();
+  if (format === 'html') return await res.text();
+
+  let cleaned;
+  try {
+    cleaned = await stripChrome(res);
+  } catch {
+    cleaned = await (await fetch(url, { headers: { 'User-Agent': UA } })).text();
+  }
+  const md = htmlToMarkdown(cleaned);
   return format === 'text' ? toPlainText(md) : md;
 }
 
