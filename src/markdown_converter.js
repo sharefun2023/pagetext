@@ -18,7 +18,7 @@ async function quickConvert() {
   resultArea.classList.remove('show');
 
   try {
-    const resp = await fetch('https://r.jina.ai/' + encodeURIComponent(url), {
+    const resp = await fetch('/api/reader?url=' + encodeURIComponent(url) + '&format=markdown', {
       headers: { 'Accept': 'text/markdown', 'X-Return-Format': 'markdown' }
     });
     if (!resp.ok) throw new Error('HTTP ' + resp.status);

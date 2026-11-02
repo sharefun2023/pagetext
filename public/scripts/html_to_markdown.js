@@ -67,7 +67,7 @@ async function convertUrl() {
 
   setStatus('Fetching ' + url + ' ...', 'info');
   try {
-    var response = await fetch('https://r.jina.ai/' + encodeURIComponent(url), {
+    var response = await fetch('/api/reader?url=' + encodeURIComponent(url) + '&format=markdown', {
       headers: { 'Accept': 'text/markdown', 'X-Return-Format': 'markdown' }
     });
     if (!response.ok) throw new Error('HTTP ' + response.status);
@@ -91,7 +91,7 @@ function convertUrlHtml() {
   if (!url.startsWith('http://') && !url.startsWith('https://')) { url = 'https://' + url; }
 
   setStatus('Fetching ' + url + ' ...', 'info');
-  fetch('https://r.jina.ai/' + encodeURIComponent(url), {
+  fetch('/api/reader?url=' + encodeURIComponent(url) + '&format=html', {
     headers: { 'Accept': 'text/html' }
   })
   .then(function(r) {

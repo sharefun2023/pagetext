@@ -60,7 +60,7 @@ async function extractText() {
   resultArea.classList.remove('show');
 
   try {
-    const apiUrl = 'https://r.jina.ai/' + encodeURIComponent(url);
+    const apiUrl = '/api/reader?url=' + encodeURIComponent(url) + '&format=markdown';
     const response = await fetch(apiUrl, {
       headers: { 'Accept': 'text/markdown', 'X-Return-Format': 'markdown' }
     });
