@@ -43,3 +43,4 @@
 *   2026-09-17 21:00:05 (auto) — Git activity: 74 commits, latest: ba73c85 chore: SEO maintenance 2026-09-17 (sitemap resubmitted, 11/11 pages 200) (sharefun2023, 2026-09-17)
 *   2026-09-18 03:30:09 (auto) — Git activity: 75 commits, latest: ba73c85 chore: SEO maintenance 2026-09-17 (sitemap resubmitted, 11/11 pages 200) (sharefun2023, 2026-09-17)
 *   2026-09-23 03:30:08 (auto) — Git activity: 81 commits, latest: 8269b2e chore: SEO maintenance 2026-09-22 - honest lastmod: ignore site-wide footer/nav commits (sharefun2023, 2026-09-22)
+*   2026-11-03 03:30:15 (auto) — Git activity: 100 commits, latest: c74dbb9 fix(reader): replace HTMLRewriter with a pure-JS depth-aware chrome stripper (sharefun2023, 2026-11-02)

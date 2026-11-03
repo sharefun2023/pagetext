@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>URL to Text - Free Online Webpage Text Extractor | pagetext.io</title>
-<meta name="description" content="URL to Text: extract plain text from any web page in one click. Free online tool for AI prompts, research and summarising — no sign-up, no limits.">
-<meta name="keywords" content="url to text, convert url to text, webpage to text, url text extractor, extract text from url, web page to plain text, url to txt, convert webpage to plain text, free url to text converter, online url to text">
+<title>URL to Text: Extract Text from a Website, Web Page or URL | pagetext.io</title>
+<meta name="description" content="Extract text from any website, web page or URL in one click. Free URL to text converter — clean plain text for AI prompts, docs and research.">
+<meta name="keywords" content="extract text from website, extract text from webpage, extract text from url, url to text, convert url to text, webpage to text, url text extractor, extract text from url, web page to plain text, url to txt, convert webpage to plain text, free url to text converter, online url to text">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://pagetext.io/url-to-text">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PageText">
-<meta property="og:title" content="URL to Text - Free Online Webpage Text Extractor | pagetext.io">
-<meta property="og:description" content="Extract clean, readable text from any URL in one click. Convert any webpage to plain text instantly.">
+<meta property="og:title" content="URL to Text: Extract Text from a Website, Web Page or URL">
+<meta property="og:description" content="Extract text from any website, web page or URL. Strip HTML, ads and clutter to get clean plain text — free, no sign-up.">
 <meta property="og:url" content="https://pagetext.io/url-to-text">
 <meta property="og:image" content="https://pagetext.io/og/url-to-text.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="PageText · URL to Text Converter">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="URL to Text - Free Online Webpage Text Extractor | pagetext.io">
-<meta name="twitter:description" content="Extract clean, readable text from any URL in one click. Convert any webpage to plain text instantly.">
+<meta name="twitter:title" content="URL to Text: Extract Text from a Website, Web Page or URL">
+<meta name="twitter:description" content="Extract text from any website, web page or URL. Strip HTML, ads and clutter to get clean plain text — free, no sign-up.">
 <meta name="twitter:image" content="https://pagetext.io/og/url-to-text.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESF1YX8CCR"></script>
 <script>
@@ -32,13 +32,13 @@ gtag('config', 'G-ESF1YX8CCR');
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "URL to Text Converter",
-  "description": "Extract clean plain text from any web page URL. Free online tool with client-side processing powered by Jina Reader API.",
+  "name": "URL to Text — Extract Text from a Website, Web Page or URL",
+  "description": "Extract text from any website, web page or URL in one click. Free online URL to text converter that strips HTML, CSS, JavaScript, ads, and clutter — leaving only the readable article content.",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Web",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://pagetext.io/url-to-text",
-  "dateModified": "2026-09-23",
+  "dateModified": "2026-11-03",
   "featureList": [
     "Paste any URL and extract clean text",
     "Strips HTML, CSS, JavaScript, ads, and navigation",
@@ -97,6 +97,30 @@ gtag('config', 'G-ESF1YX8CCR');
     },
     {
       "@type": "Question",
+      "name": "Can I extract text from a whole website, or only one page at a time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One page at a time in the browser tool — each URL you paste is fetched and converted separately. To extract text from a whole website, loop over its URLs with a script against the PageText API at pagetext.io/api, or paste the pages you actually need. Bulk crawling a domain from a single click is not something this page does."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I extract text from a webpage behind a login or paywall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The extractor only reads publicly accessible pages, and it has no way to log in, hold a session cookie, or unlock subscriber content. If a page returns a login wall or a consent gate, you get that gate's text rather than the article. Copying text you already have access to through your own browser session is the honest workaround."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does extracting text from a URL work on a phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the page is responsive and runs in any modern mobile browser, so you can paste a URL from Safari or Chrome on iOS and Android and get the same plain text output. You just need to be able to copy the link, which mobile browsers make easy from the share sheet."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How is URL to Text different from URL to Markdown?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -108,7 +132,7 @@ gtag('config', 'G-ESF1YX8CCR');
       "name": "Can I use this for bulk or automated extraction?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For programmatic bulk extraction, you can call the Jina Reader API directly (r.jina.ai) or use the PageText API at pagetext.io/api. The web tool is designed for single-URL conversions, but the underlying API supports automated workflows via n8n, Zapier, or custom scripts."
+        "text": "For programmatic bulk extraction, use the PageText reader endpoint at pagetext.io/api/reader?url=...&format=text, or the documented API at pagetext.io/api. The web tool is designed for single-URL conversions, but the underlying API supports automated workflows via n8n, Zapier, or custom scripts."
       }
     }
   ]
@@ -240,7 +264,7 @@ footer a:hover { text-decoration: underline; }
 
 <main>
   <div class="hero">
-    <h1>Free URL to Text Converter</h1>
+    <h1>URL to Text: Extract Text from a Website, Web Page or URL</h1>
     <p>Extract clean, readable plain text from any web page in seconds. Paste any URL below — the tool strips away all HTML, CSS, JavaScript, navigation, ads, and formatting, leaving only the pure text content. Ideal for pasting into word processors, email, spreadsheets, or any app that needs clean text without markup. <strong>100% client-side</strong>: your content never leaves your device, and no server ever sees your data.</p>
   </div>
 
@@ -301,7 +325,7 @@ footer a:hover { text-decoration: underline; }
         <p style="color:var(--text2);font-size:0.9em;">Copy the plain text to your clipboard or download as a .txt file — ready for any word processor, email, or editor.</p>
       </div>
     </div>
-    <p style="color:var(--text2);font-size:0.9em;margin-top:16px;text-align:center;">Under the hood: <code style="background:var(--surface2);padding:2px 8px;border-radius:4px;font-size:0.9em;">fetch('https://r.jina.ai/' + url, { headers: { Accept: 'text/markdown' } })</code> then strip formatting → clean plain text. No servers, no databases, no cookies.</p>
+    <p style="color:var(--text2);font-size:0.9em;margin-top:16px;text-align:center;">Under the hood: <code style="background:var(--surface2);padding:2px 8px;border-radius:4px;font-size:0.9em;">fetch('/api/reader?url=' + encodeURIComponent(url) + '&amp;format=markdown')</code> then strip the Markdown markers → clean plain text. No servers, no databases, no cookies.</p>
   </section>
 
   <section style="margin-top:48px;">
@@ -328,6 +352,20 @@ footer a:hover { text-decoration: underline; }
     </div>
   </section>
 
+  <section style="margin-top:48px;">
+    <h2>Extract Text from a Website, Web Page or URL</h2>
+    <p style="color:var(--text2);margin-bottom:16px;">People arrive here with the same intent worded three ways: extract text from a website, extract text from a webpage, or extract text from a URL. In practice that is one operation — fetch the page, throw away the markup and the boilerplate, keep the words. Here is what each phrasing actually means when you run it through the box above.</p>
+
+    <h3 style="color:var(--accent);font-size:1.05em;margin:20px 0 6px;">Extract text from a URL link</h3>
+    <p style="color:var(--text2);">This is the literal case: you have a link and want the words behind it. Paste the full URL (including <code style="background:var(--surface2);padding:1px 6px;border-radius:4px;">https://</code>), hit Extract Text, and the page is fetched server-side, rendered, and reduced to plain text. Tracking parameters, anchors and redirect shorteners are fine — the tool follows the link and reads what a browser would see.</p>
+
+    <h3 style="color:var(--accent);font-size:1.05em;margin:20px 0 6px;">Extract text from a webpage you can't copy</h3>
+    <p style="color:var(--text2);">Paywalled-by-annoyance pages, docs with text baked into a scroll container, sites that block right-click — a normal select-all grabs menus and cookie banners along with the article. Run the URL through this tool and you get the article body only, with navigation, sidebars, share buttons and footers dropped. That is the difference between 40,000 characters of chrome and 6,000 characters of substance.</p>
+
+    <h3 style="color:var(--accent);font-size:1.05em;margin:20px 0 6px;">Extract text from a whole website</h3>
+    <p style="color:var(--text2);">No tool can guess which pages of a site you care about, so extraction is per-URL and honest about it: paste an index page, a sitemap-adjacent listing, or each article you need. For dozens of pages, script it against the <a href="/api">PageText API</a> or the reader endpoint instead of clicking. If you want the structure kept — headings, lists, tables — use <a href="/url-to-markdown">URL to Markdown</a>; if you are feeding an LLM, that format usually survives the prompt better than flat text. For pasted HTML rather than a live URL, <a href="/web-page-text-extractor">Web Page Text Extractor</a> is the closer fit.</p>
+  </section>
+
   <section class="faq-section">
     <h2>Frequently Asked Questions</h2>
     <details>
@@ -352,9 +390,21 @@ footer a:hover { text-decoration: underline; }
     </details>
     <details>
       <summary>Can I use this for bulk or automated extraction?</summary>
-      <p>For programmatic bulk extraction, you can call the Jina Reader API directly (r.jina.ai) or use the PageText API at pagetext.io/api. The web tool is designed for single-URL conversions, but the underlying API supports automated workflows via n8n, Zapier, or custom scripts.</p>
+      <p>For programmatic bulk extraction, use the PageText reader endpoint at pagetext.io/api/reader?url=...&format=text, or the documented API at pagetext.io/api. The web tool is designed for single-URL conversions, but the underlying API supports automated workflows via n8n, Zapier, or custom scripts.</p>
     </details>
 
+    <details>
+      <summary>Can I extract text from a whole website, or only one page at a time?</summary>
+      <p>One page at a time in the browser tool — each URL you paste is fetched and converted separately. To extract text from a whole website, loop over its URLs with a script against the PageText API at pagetext.io/api, or paste the pages you actually need. Bulk crawling a domain from a single click is not something this page does.</p>
+    </details>
+    <details>
+      <summary>Can I extract text from a webpage behind a login or paywall?</summary>
+      <p>No. The extractor only reads publicly accessible pages, and it has no way to log in, hold a session cookie, or unlock subscriber content. If a page returns a login wall or a consent gate, you get that gate's text rather than the article. Copying text you already have access to through your own browser session is the honest workaround.</p>
+    </details>
+    <details>
+      <summary>Does extracting text from a URL work on a phone?</summary>
+      <p>Yes — the page is responsive and runs in any modern mobile browser, so you can paste a URL from Safari or Chrome on iOS and Android and get the same plain text output. You just need to be able to copy the link, which mobile browsers make easy from the share sheet.</p>
+    </details>
     <details>
       <summary>How is URL to Text different from URL to Markdown?</summary>
       <p>URL to Markdown (PageText's main tool) preserves formatting like headings, links, code blocks, and lists in Markdown syntax. URL to Text strips all formatting and produces clean plain text — ideal for pasting into word processors, email, spreadsheets, or any app that doesn't support Markdown. Use Text when you want pure readable content without any markup.</p>
