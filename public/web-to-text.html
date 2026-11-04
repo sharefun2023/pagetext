@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web to Text - Free Online Webpage to Plain Text Converter | PageText</title>
-<meta name="description" content="Web to text converter: turn any website into clean plain text you can copy or download. Free online tool for AI prompts, summaries and research.">
+<title>Web to Text Converter — Free Plain Text from Any Page</title>
+<meta name="description" content="Free web to text converter: paste any URL and get clean, copyable plain text — no tags, no ads, no sign-up. Built for AI prompts, summaries and research.">
 <meta name="keywords" content="web to text, webpage to text, convert web to text, website to text, web page text, url to plain text, webpage text converter, extract text from web, online web to text, free web to text converter">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://pagetext.io/web-to-text">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PageText">
-<meta property="og:title" content="Web to Text - Free Online Webpage to Plain Text Converter">
+<meta property="og:title" content="Web to Text Converter — Free Plain Text from Any Page">
 <meta property="og:description" content="Convert any web page to plain text instantly. Strip HTML, ads, and clutter. Free, no sign-up.">
 <meta property="og:url" content="https://pagetext.io/web-to-text">
 <meta property="og:image" content="https://pagetext.io/og/web-to-text.png">
@@ -18,7 +18,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="PageText · Web to Text">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Web to Text - Free Online Webpage to Plain Text Converter">
+<meta name="twitter:title" content="Web to Text Converter — Free Plain Text from Any Page">
 <meta name="twitter:description" content="Convert any web page to plain text instantly. Strip HTML, ads, and clutter. Free, no sign-up.">
 <meta name="twitter:image" content="https://pagetext.io/og/web-to-text.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESF1YX8CCR"></script>
@@ -280,6 +280,20 @@ footer a:hover { text-decoration: underline; }
       </div>
     </div>
     <p style="color:var(--text2);margin-top:16px;">If what you actually need is the words from one specific link — <a href="/url-to-text" style="color:var(--accent);">extract text from a website</a>, page or URL one address at a time — the URL to Text page walks through that case, including pages that block copy-paste and pages behind a login.</p>
+  </section>
+
+  <section class="use-cases">
+    <h2>Web to Text Converter: Plain Text from Any Page</h2>
+    <p>A plain text converter has one job — take a URL, hand back the words. Not the nav bar, not the cookie banner, not the "related articles" rail at the bottom. That is all the box above does, and it is the whole reason this page exists.</p>
+
+    <h3>What survives the conversion</h3>
+    <p>Paragraph breaks, sentence order, and the text itself. What does not survive: HTML tags, links (their text stays, the URL goes), bold and italic markers, tables as tables, and anything rendered by JavaScript after the page settles. Headings come out as their own lines but lose their level — fine for reading, annoying if you were planning to rebuild the page structure.</p>
+
+    <h3>When the answer is Markdown, not plain text</h3>
+    <p>If the text is headed for an editor, a static site, or a docs repo, stripping the structure just means rebuilding it by hand. Use <a href="/html-to-markdown">HTML to Markdown</a> instead — it keeps heading levels, lists, code fences and link targets as Markdown syntax. Going the other way, <a href="/markdown-to-html">Markdown to HTML</a> turns a .md file back into publishable HTML. Plain text is for reading, counting and feeding a model; Markdown is for editing and publishing.</p>
+
+    <h3>Many pages, one URL at a time</h3>
+    <p>This converter handles a single address per run. For a batch, call the reader endpoint from a script — <code>/api/reader?url=...&amp;format=text</code> returns the same text with no browser involved, and switching to <code>format=markdown</code> or <code>format=html</code> changes the output. Responses are cached for five minutes, so re-running the same URL costs nothing. The <a href="/api">API page</a> lists the parameters.</p>
   </section>
 
   <section class="faq-section">
